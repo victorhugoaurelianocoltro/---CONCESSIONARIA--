@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Sora, Inter, JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google"; // Vercel rebuild v4 - force deploy
 import "./globals.css";
 import dynamic from "next/dynamic";
-import PageTransition from "@/components/PageTransition";
 
 const CustomCursor = dynamic(() => import("@/components/CustomCursor"), { ssr: false });
 const AIChatbot = dynamic(() => import("@/components/AIChatbot"), { ssr: false });
@@ -247,7 +246,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
-        <PageTransition>{children}</PageTransition>
+        {children}
         <AIChatbot />
       </body>
     </html>
