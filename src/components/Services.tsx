@@ -21,7 +21,7 @@ export default function Services() {
     <section id="services" className="py-32 bg-transparent relative border-t border-white/5 overflow-hidden">
       
       {/* Ambient Robotic Hand Background */}
-      <div className="absolute right-0 top-0 bottom-0 w-1/2 z-0 pointer-events-none opacity-20 mix-blend-screen">
+      <div className="absolute right-0 top-0 bottom-0 w-1/2 z-0 pointer-events-none opacity-20 mix-blend-screen img-reveal">
         <Image 
           src="/services_ai.png" 
           alt="AI Robotic Hand" 
@@ -63,7 +63,7 @@ export default function Services() {
                   e.currentTarget.style.setProperty("--gx", `${x}px`);
                   e.currentTarget.style.setProperty("--gy", `${y}px`);
                 }}
-                className="group cursor-pointer scroll-skew"
+                className="group cursor-pointer scroll-skew card-lift"
               >
                 <TiltCard className="p-10 relative overflow-hidden">
                   {/* Mouse-tracking spotlight Glow Effect */}

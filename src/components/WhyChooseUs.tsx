@@ -46,7 +46,7 @@ export default function WhyChooseUs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false }}
                 transition={{ duration: 0.5, delay: i * 0.15 }}
-                className="bg-[#050505] border border-white/10 rounded-xl p-6 text-center flex items-center justify-center min-h-[140px] hover:bg-white/5 transition-colors shadow-2xl relative"
+                className="bg-[#050505] border border-white/10 rounded-xl p-6 text-center flex items-center justify-center min-h-[140px] hover:bg-white/5 transition-colors shadow-2xl relative card-lift"
               >
                 {/* Dot connecting to line on desktop */}
                 <div className="absolute top-1/2 -translate-y-1/2 -left-[4px] w-[8px] h-[8px] bg-accent-electric rounded-full hidden lg:block opacity-0 md:opacity-100 shadow-[0_0_10px_rgba(78,163,224,0.8)]"></div>

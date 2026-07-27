@@ -73,14 +73,14 @@ export default function Programs() {
                 whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
                 viewport={{ once: false }}
                 transition={{ delay: i * 0.1 }}
-                className={`relative flex flex-col p-8 border border-border-color overflow-hidden group ${
+                className={`relative flex flex-col p-8 border border-border-color overflow-hidden group card-lift ${
                   prog.popular ? "bg-primary-navy" : "bg-transparent"
                 }`}
               >
                 {/* Background Image for Card */}
                 {prog.image && (
                   <>
-                    <div className="absolute inset-0 z-0">
+                    <div className="absolute inset-0 z-0 img-reveal">
                       <Image 
                         src={prog.image} 
                         alt={prog.title} 

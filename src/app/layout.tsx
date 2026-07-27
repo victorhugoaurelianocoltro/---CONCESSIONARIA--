@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Sora, Inter, JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google"; // Vercel rebuild v4 - force deploy
 import "./globals.css";
 import dynamic from "next/dynamic";
+import PageTransition from "@/components/PageTransition";
 
 const CustomCursor = dynamic(() => import("@/components/CustomCursor"), { ssr: false });
 const AIChatbot = dynamic(() => import("@/components/AIChatbot"), { ssr: false });
@@ -236,6 +237,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${sora.variable} ${inter.variable} ${jetbrainsMono.variable} ${plusJakartaSans.variable} font-general antialiased bg-transparent text-white selection:bg-accent-electric selection:text-white`}>
+        <div className="fixed top-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-accent-electric/30 via-accent-electric to-accent-electric/30 origin-left scale-x-0 z-[99999] transition-transform duration-75 scroll-progress-bar" />
         <InteractiveBackground />
         <Preloader />
         <CustomCursor />
@@ -245,7 +247,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
-        {children}
+        <PageTransition>{children}</PageTransition>
         <AIChatbot />
       </body>
     </html>

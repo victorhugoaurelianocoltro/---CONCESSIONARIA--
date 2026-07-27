@@ -166,7 +166,7 @@ export default function MeetFounder() {
               viewport={{ once: false }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               data-cursor="FOUNDER"
-              className="relative w-full aspect-[3/4] max-w-[500px] mx-auto rounded-2xl overflow-hidden border border-white/10"
+              className="relative w-full aspect-[3/4] max-w-[500px] mx-auto rounded-2xl overflow-hidden border border-white/10 img-reveal"
             >
               <Image
                 src="/founder.png"

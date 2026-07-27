@@ -21,9 +21,14 @@ export default function SmoothScroll() {
       touchMultiplier: 1.2,
     });
 
-    // Connect Lenis to ScrollTrigger
-    lenis.on("scroll", () => {
+    // Connect Lenis to ScrollTrigger and update Scroll Progress Bar
+    const progressBar = document.querySelector(".scroll-progress-bar");
+    lenis.on("scroll", (e) => {
       ScrollTrigger.update();
+      if (progressBar) {
+        const scrollPercent = e.scroll / (e.limit || 1);
+        gsap.set(progressBar, { scaleX: scrollPercent });
+      }
     });
 
     const updateTicker = (time: number) => {
@@ -96,6 +101,50 @@ export default function SmoothScroll() {
             ease: "power3.out",
             overwrite: "auto"
           });
+        }
+      });
+      revealTriggers.push(trigger);
+    });
+
+    // Image reveal animation using clip-path and scale
+    const revealImages = document.querySelectorAll(".img-reveal");
+    revealImages.forEach(el => {
+      // Set initial styles
+      gsap.set(el, { 
+        clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)",
+        scale: 1.15
+      });
+      
+      const trigger = ScrollTrigger.create({
+        trigger: el,
+        start: "top 85%",
+        toggleActions: "play none none none",
+        onEnter: () => {
+          gsap.to(el, {
+            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+            scale: 1,
+            duration: 1.2,
+            ease: "power4.inOut",
+            overwrite: "auto"
+          });
+        }
+      });
+      revealTriggers.push(trigger);
+    });
+
+    // Parallax scrolling elements
+    const parallaxElements = document.querySelectorAll(".scroll-parallax");
+    parallaxElements.forEach(el => {
+      const speed = parseFloat(el.getAttribute("data-parallax-speed") || "10"); // percent offset
+      const trigger = ScrollTrigger.create({
+        trigger: el,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+        onUpdate: (self) => {
+          const progress = self.progress; // 0 to 1
+          const yOffset = (progress - 0.5) * 2 * speed;
+          gsap.set(el, { yPercent: yOffset, overwrite: "auto" });
         }
       });
       revealTriggers.push(trigger);

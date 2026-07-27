@@ -91,3 +91,45 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Premium micro-interactions & animation utilities */
+.card-lift {
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform, box-shadow;
+}
+.card-lift:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 20px 40px -15px rgba(78, 163, 224, 0.25), 0 0 15px rgba(78, 163, 224, 0.1);
+  border-color: rgba(78, 163, 224, 0.4);
+}
+
+.text-slide-up {
+  overflow: hidden;
+}
+.text-slide-up-inner {
+  display: inline-block;
+  transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.text-slide-up:hover .text-slide-up-inner {
+  transform: translateY(-100%);
+}
+
+.underline-grow {
+  position: relative;
+}
+.underline-grow::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1.5px;
+  bottom: -2px;
+  left: 0;
+  background-color: #4EA3E0; /* brand electric accent */
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+.underline-grow:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
