@@ -82,7 +82,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-          className="text-[36px] md:text-[56px] font-medium leading-[1.28] text-center max-w-[613px]"
+          className="text-[36px] md:text-[56px] font-medium leading-[1.28] text-center max-w-[850px]"
           style={{
             backgroundImage: "linear-gradient(144.5deg, #FFFFFF 28%, rgba(0,0,0,0) 115%)",
             WebkitBackgroundClip: "text",
@@ -91,7 +91,7 @@ export default function Hero() {
             color: "transparent"
           }}
         >
-          <TextDecode text="Building Digital Futures at the Speed of Innovation" />
+          <TextDecode text="We build AI Sales & Customer Support Systems for Real Estate Companies." />
         </motion.h1>
 
         {/* Subtitle */}
@@ -101,7 +101,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           className="mt-[24px] mb-[40px] text-[15px] font-normal text-white/70 max-w-[680px] text-center leading-relaxed"
         >
-          ParvInfoSoft empowers businesses with cutting-edge IT solutions, AI innovation, web development, training programs, and scalable digital systems built for growth, speed, and long-term success.
+          Automating lead qualification, booking calendar logistics, and customer support round-the-clock with custom, low-latency AI agents tailored for high-volume real estate developers and brokers.
         </motion.p>
 
         {/* CTA Button */}
