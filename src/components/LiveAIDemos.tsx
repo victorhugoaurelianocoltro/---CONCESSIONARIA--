@@ -8,8 +8,8 @@ import MagneticButton from "./MagneticButton";
 
 const tabs = [
   { id: "roi", name: "ROI Calculator", icon: Calculator },
-  { id: "course", name: "Course Recommender", icon: GraduationCap },
-  { id: "headline", name: "Headline Generator", icon: Type }
+  { id: "solution", name: "System Recommender", icon: Sparkles },
+  { id: "headline", name: "Copywriting Agent", icon: Type }
 ];
 
 export default function LiveAIDemos() {
@@ -27,10 +27,10 @@ export default function LiveAIDemos() {
     return { min: 500, max: 20000, step: 500 }; // For USD, EUR, GBP
   };
 
-  // Course Recommender State
-  const [userType, setUserType] = useState("");
+  // System Recommender State
+  const [industryType, setIndustryType] = useState("");
   const [isAnalyzing, setIsAnalyzing] = useState(false);
-  const [recommendedCourse, setRecommendedCourse] = useState<any>(null);
+  const [recommendedSystem, setRecommendedSystem] = useState<any>(null);
 
   // Headline Generator State
   const [niche, setNiche] = useState("");
@@ -44,22 +44,22 @@ export default function LiveAIDemos() {
     return { hours, moneySaved };
   };
 
-  const handleCourseAnalysis = () => {
-    if (!userType) return;
+  const handleSystemAnalysis = () => {
+    if (!industryType) return;
     setIsAnalyzing(true);
-    setRecommendedCourse(null);
+    setRecommendedSystem(null);
     setTimeout(() => {
       setIsAnalyzing(false);
-      if (userType === "student") {
-        setRecommendedCourse({ title: "AI Foundation Program", reason: "Perfect for beginners looking to master ChatGPT and everyday AI tools without coding.", link: "/training/ai-foundation" });
-      } else if (userType === "freelancer") {
-        setRecommendedCourse({ title: "AI Skill Builder", reason: "Learn how to build automation workflows and sell them as a high-paying freelance service.", link: "/training/skill-builder" });
-      } else if (userType === "working professional") {
-        setRecommendedCourse({ title: "AI Skill Builder", reason: "Upskill in advanced prompt engineering and tools to save hours at your current job and stand out.", link: "/training/skill-builder" });
+      if (industryType === "real estate") {
+        setRecommendedSystem({ title: "Autonomous Real Estate Voice Agent", reason: "Intercepts inbound property inquiries, qualifies buyers, and schedules site-visits into Cal.com instantly.", link: "/solutions/lead-generation" });
+      } else if (industryType === "healthcare") {
+        setRecommendedSystem({ title: "Sub-800ms Medical Voice Receptionist", reason: "Handles high-volume patient calls, verifies insurance data, and syncs calendar logistics 24/7.", link: "/resources/case-studies/ai-hospital-receptionist" });
+      } else if (industryType === "e-commerce") {
+        setRecommendedSystem({ title: "E-Commerce Growth & Support Bot", reason: "Resolves 90% of sizing and order tracking queries with abandoned cart WhatsApp recovery.", link: "/solutions/ecommerce-growth" });
       } else {
-        setRecommendedCourse({ title: "AI Income Accelerator", reason: "The exact blueprint for agency owners to scale their operations and close high-ticket AI retainers.", link: "/training/income-accelerator" });
+        setRecommendedSystem({ title: "Custom Headless CRM & ERP Automation", reason: "Connects your entire tech stack via n8n to eliminate manual data entry and sales bottlenecks.", link: "/services/crm-erp" });
       }
-    }, 1500);
+    }, 1200);
   };
 
   const handleGenerateHeadline = () => {
@@ -208,10 +208,10 @@ export default function LiveAIDemos() {
               </motion.div>
             )}
 
-            {/* COURSE RECOMMENDER */}
-            {activeTab === "course" && (
+            {/* SYSTEM RECOMMENDER */}
+            {activeTab === "solution" && (
               <motion.div
-                key="course"
+                key="solution"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
@@ -219,30 +219,30 @@ export default function LiveAIDemos() {
                 className="max-w-3xl mx-auto"
               >
                 <div className="text-center mb-10">
-                  <h3 className="text-2xl font-medium text-white mb-2">Which AI Course is right for you?</h3>
-                  <p className="text-white/50">Let our AI analyze your profile and recommend the perfect training program.</p>
+                  <h3 className="text-2xl font-medium text-white mb-2">Which AI System Does Your Business Need?</h3>
+                  <p className="text-white/50">Select your industry to receive a customized AI system blueprint recommendation.</p>
                 </div>
 
-                {!recommendedCourse && !isAnalyzing && (
+                {!recommendedSystem && !isAnalyzing && (
                   <div className="space-y-6">
-                    <label className="text-sm text-white/70 block text-center">I am currently a...</label>
+                    <label className="text-sm text-white/70 block text-center">My primary business industry is...</label>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-                      {["student", "working professional", "freelancer", "business owner"].map((type) => (
+                      {["real estate", "healthcare", "e-commerce", "b2b enterprise"].map((type) => (
                         <button 
                           key={type}
-                          onClick={() => setUserType(type)}
-                          className={`p-3 text-sm rounded-xl border transition-colors capitalize ${userType === type ? 'bg-accent-electric/10 border-accent-electric text-accent-electric' : 'bg-white/5 border-white/10 text-white hover:border-white/30'}`}
+                          onClick={() => setIndustryType(type)}
+                          className={`p-3 text-sm rounded-xl border transition-colors capitalize ${industryType === type ? 'bg-accent-electric/10 border-accent-electric text-accent-electric' : 'bg-white/5 border-white/10 text-white hover:border-white/30'}`}
                         >
                           {type}
                         </button>
                       ))}
                     </div>
                     <button 
-                      onClick={handleCourseAnalysis}
-                      disabled={!userType}
+                      onClick={handleSystemAnalysis}
+                      disabled={!industryType}
                       className="w-full mt-6 py-4 rounded-xl bg-white text-black font-medium hover:bg-accent-electric transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
                     >
-                      <Sparkles size={18} /> Analyze Profile
+                      <Sparkles size={18} /> Analyze Industry Requirements
                     </button>
                   </div>
                 )}
@@ -250,28 +250,28 @@ export default function LiveAIDemos() {
                 {isAnalyzing && (
                   <div className="py-20 flex flex-col items-center justify-center text-accent-electric">
                     <Loader2 size={40} className="animate-spin mb-4" />
-                    <p className="font-medium animate-pulse">Running neural analysis on profile...</p>
+                    <p className="font-medium animate-pulse">Running neural analysis on workflow bottlenecks...</p>
                   </div>
                 )}
 
-                {recommendedCourse && !isAnalyzing && (
+                {recommendedSystem && !isAnalyzing && (
                   <motion.div 
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     className="bg-white/5 border border-white/10 p-8 rounded-2xl text-center"
                   >
                     <div className="w-16 h-16 bg-accent-electric/10 rounded-full flex items-center justify-center mx-auto mb-6 text-accent-electric">
-                      <GraduationCap size={32} />
+                      <Sparkles size={32} />
                     </div>
-                    <h4 className="text-accent-electric text-sm tracking-widest uppercase mb-2">Perfect Match</h4>
-                    <h2 className="text-3xl font-medium text-white mb-4">{recommendedCourse.title}</h2>
-                    <p className="text-white/60 mb-8">{recommendedCourse.reason}</p>
+                    <h4 className="text-accent-electric text-sm tracking-widest uppercase mb-2">Recommended System Architecture</h4>
+                    <h2 className="text-3xl font-medium text-white mb-4">{recommendedSystem.title}</h2>
+                    <p className="text-white/60 mb-8">{recommendedSystem.reason}</p>
                     <div className="flex gap-4 justify-center">
-                      <button onClick={() => { setRecommendedCourse(null); setUserType(""); }} className="px-6 py-3 rounded-full border border-white/20 text-white hover:bg-white/10 transition-colors">
-                        Try Again
+                      <button onClick={() => { setRecommendedSystem(null); setIndustryType(""); }} className="px-6 py-3 rounded-full border border-white/20 text-white hover:bg-white/10 transition-colors">
+                        Select Another Industry
                       </button>
-                      <Link href={recommendedCourse.link} className="px-6 py-3 rounded-full bg-accent-electric text-black font-medium hover:bg-white transition-colors">
-                        View Course Details
+                      <Link href={recommendedSystem.link} className="px-6 py-3 rounded-full bg-accent-electric text-black font-medium hover:bg-white transition-colors">
+                        Explore System Architecture
                       </Link>
                     </div>
                   </motion.div>

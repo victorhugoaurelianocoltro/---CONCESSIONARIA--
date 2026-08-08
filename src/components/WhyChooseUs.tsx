@@ -3,12 +3,12 @@
 import { motion } from "framer-motion";
 
 const reasons = [
-  "Real-world execution",
-  "AI-first innovation",
-  "Affordable growth systems",
-  "Fast delivery",
-  "Long-term support",
-  "Scalable architecture"
+  "Sub-800ms Latency",
+  "Seamless CRM Integration",
+  "HIPAA / SOC-2 Compliant",
+  "14-Day Rapid Deployment",
+  "99.9% Autonomous Uptime",
+  "24/7 SLA Engineering"
 ];
 
 export default function WhyChooseUs() {

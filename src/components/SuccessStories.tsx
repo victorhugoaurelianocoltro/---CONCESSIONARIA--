@@ -5,21 +5,18 @@ import { Star, Quote, ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const testimonials = [
-  { id: 1, name: "Harsh Patel", role: "Agency Owner", city: "Ahmedabad", initials: "HP", color: "from-blue-400 to-indigo-600", text: "ParvInfoSoft completely transformed my agency. We automated our entire client onboarding process, saving my team over 40 hours a week.", result: "Saved 40 hrs/week" },
-  { id: 2, name: "Riya Sharma", role: "Freelance Developer", city: "Mumbai", initials: "RS", color: "from-pink-400 to-rose-600", text: "The AI Skill Builder program is worth 10x what they charge. I landed my first international client within 3 weeks of completing the course.", result: "Landed $2k client" },
+  { id: 1, name: "Harsh Patel", role: "Real Estate Developer", city: "Ahmedabad", initials: "HP", color: "from-blue-400 to-indigo-600", text: "ParvInfoSoft deployed an autonomous voice receptionist for our luxury residential project. It qualifies inbound buyer calls and schedules site visits 24/7 without missing a single lead.", result: "Saved 40 hrs/week" },
+  { id: 2, name: "Riya Sharma", role: "Healthcare Ops Director", city: "Mumbai", initials: "RS", color: "from-pink-400 to-rose-600", text: "Their sub-800ms AI Voice agent handles patient appointment logistics and insurance verification. Our front-desk desk workload dropped drastically.", result: "Sub-800ms Latency" },
   { id: 3, name: "Mitul Desai", role: "E-commerce Founder", city: "Surat", initials: "MD", color: "from-emerald-400 to-teal-600", text: "Their team built a custom AI recommendation engine for our store. Our AOV increased by 35% in just two months.", result: "+35% AOV" },
-  { id: 4, name: "Jinal Mehta", role: "Marketing Director", city: "Pune", initials: "JM", color: "from-amber-400 to-orange-600", text: "We struggled with lead generation until ParvInfoSoft built our automated funnel. We now have a predictable stream of qualified leads.", result: "210% More Leads" },
+  { id: 4, name: "Jinal Mehta", role: "Marketing Director", city: "Pune", initials: "JM", color: "from-amber-400 to-orange-600", text: "We struggled with lead qualification until ParvInfoSoft built our automated n8n funnel. We now have a predictable stream of qualified leads.", result: "210% More Leads" },
   { id: 5, name: "Rahul Verma", role: "SaaS Founder", city: "Bangalore", initials: "RV", color: "from-cyan-400 to-blue-600", text: "I hired them for complete tech consulting. They architected our entire backend, saving us months of developer time and costly mistakes.", result: "Launched 3 months early" },
-  { id: 6, name: "Priya Mehta", role: "Student", city: "Delhi", initials: "PM", color: "from-purple-400 to-violet-600", text: "The AI Foundation course was my gateway into tech. The instructors are incredibly supportive and the curriculum is highly practical.", result: "Got Tech Internship" },
+  { id: 6, name: "Pankaj Shah", role: "Commercial Broker", city: "Delhi", initials: "PS", color: "from-purple-400 to-violet-600", text: "The AI Voice Receptionist handles property inquiries instantly and syncs directly into Salesforce. Zero lead drop-offs.", result: "100% Lead Capture" },
   { id: 7, name: "Vikas Shah", role: "Real Estate Broker", city: "Ahmedabad", initials: "VS", color: "from-red-400 to-rose-600", text: "We use their custom CRM daily. It automatically follows up with leads via WhatsApp and has literally doubled our closing rate.", result: "Doubled Close Rate" },
-  { id: 8, name: "Neha Jain", role: "Content Creator", city: "Jaipur", initials: "NJ", color: "from-yellow-400 to-amber-600", text: "I learned how to automate my entire content creation and distribution workflow. I now run three YouTube channels effortlessly.", result: "3x Content Output" },
+  { id: 8, name: "Neha Jain", role: "Hospitality Manager", city: "Jaipur", initials: "NJ", color: "from-yellow-400 to-amber-600", text: "Our booking desk is 100% automated with their Retell AI voice agent. Guest satisfaction and instant confirmation rates went through the roof.", result: "24/7 Auto Booking" },
   { id: 9, name: "Aarav Joshi", role: "Operations Head", city: "Hyderabad", initials: "AJ", color: "from-lime-400 to-green-600", text: "Their chatbot solution handles 80% of our tier-1 support queries flawlessly. It's like having a 24/7 support team.", result: "80% Ticket Deflection" },
-  { id: 10, name: "Sneha Kapoor", role: "HR Manager", city: "Gurgaon", initials: "SK", color: "from-fuchsia-400 to-pink-600", text: "We booked them for Corporate Training. Our entire HR and recruitment team now uses AI to screen resumes and draft emails.", result: "10x Faster Hiring" },
-  { id: 11, name: "Yash Patel", role: "B2B Sales", city: "Ahmedabad", initials: "YP", color: "from-sky-400 to-blue-600", text: "The Lead Generation System they built is a masterpiece. Cold outreach is now 100% automated and highly personalized.", result: "15 Meetings/Week" },
-  { id: 12, name: "Kunal Shah", role: "Startup Founder", city: "Bangalore", initials: "KS", color: "from-indigo-400 to-purple-600", text: "They designed our branding and landing page. We raised our seed round within a month of launch.", result: "Raised Seed Round" },
-  { id: 13, name: "Simran Kaur", role: "Freelance Designer", city: "Chandigarh", initials: "SK", color: "from-rose-400 to-red-600", text: "The AI Income Accelerator gave me the exact blueprint to package my design services with AI and charge premium rates.", result: "Tripled Freelance Rate" },
-  { id: 14, name: "Mohit Arora", role: "Gym Owner", city: "Delhi", initials: "MA", color: "from-orange-400 to-red-600", text: "They built a WhatsApp AI agent that automatically books trial classes for leads from Instagram. It's magic.", result: "Fully Booked Gym" },
-  { id: 15, name: "Devansh Modi", role: "Consultant", city: "Mumbai", initials: "DM", color: "from-teal-400 to-emerald-600", text: "Best investment I made this year. The strategies taught are not generic internet advice, they are battle-tested agency systems.", result: "Scaled to ₹5L/mo" }
+  { id: 10, name: "Sneha Kapoor", role: "Enterprise Sales VP", city: "Gurgaon", initials: "SK", color: "from-fuchsia-400 to-pink-600", text: "We contracted ParvInfoSoft for custom CRM integration. Our entire sales pipeline now updates in real-time with zero manual data entry.", result: "10x Pipeline Speed" },
+  { id: 11, name: "Yash Patel", role: "B2B Sales Lead", city: "Ahmedabad", initials: "YP", color: "from-sky-400 to-blue-600", text: "The Lead Generation System they built is a masterpiece. Cold outreach is now 100% automated and highly personalized.", result: "15 Meetings/Week" },
+  { id: 12, name: "Kunal Shah", role: "Startup Founder", city: "Bangalore", initials: "KS", color: "from-indigo-400 to-purple-600", text: "They designed our web platform and automated funnel. We raised our seed round within a month of launch.", result: "Raised Seed Round" }
 ];
 
 export default function SuccessStories() {
@@ -88,10 +85,10 @@ export default function SuccessStories() {
             Real Impact
           </div>
           <h2 className="text-4xl md:text-6xl font-medium text-white mb-6 tracking-tight">
-            Loved by <span className="text-accent-electric">1000+</span> Innovators
+            Proven <span className="text-accent-electric">Client Impact</span>
           </h2>
           <p className="text-lg text-white/50 max-w-2xl">
-            Don't just take our word for it. Here is what business owners, freelancers, and students have to say about working with ParvInfoSoft.
+            Don't just take our word for it. Here is what real estate developers, enterprise leaders, and business owners have to say about working with ParvInfoSoft.
           </p>
         </div>
       </div>
