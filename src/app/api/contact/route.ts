@@ -28,7 +28,7 @@ export async function POST(request: Request) {
     };
 
     // Send data to Google Sheets Webhook (Google Apps Script Web App)
-    const googleWebhookUrl = process.env.GOOGLE_SHEET_WEBHOOK_URL;
+    const googleWebhookUrl = process.env.GOOGLE_SHEET_WEBHOOK_URL || "https://script.google.com/macros/s/AKfycbwpBMojfwY94F8o_kwIBaCqANmXAvYUtvmUe_jqRIkGFXiwLswvkIvmZvsbyCUYLwLM/exec";
     let sheetSuccess = false;
     
     if (googleWebhookUrl) {
