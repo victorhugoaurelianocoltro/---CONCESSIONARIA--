@@ -11,6 +11,8 @@ import Link from "next/link";
 export default function GetStartedPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [selectedService, setSelectedService] = useState("");
+  const [selectedBudget, setSelectedBudget] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -117,25 +119,73 @@ export default function GetStartedPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-white/80">Primary Service / System Needed *</label>
-                    <select required name="service" className="w-full bg-black border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-accent-electric transition-colors appearance-none">
+                    <select 
+                      required 
+                      name="service" 
+                      value={selectedService}
+                      onChange={(e) => setSelectedService(e.target.value)}
+                      className="w-full bg-black border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-accent-electric transition-colors appearance-none cursor-pointer"
+                    >
                       <option value="">Select a system</option>
                       <option value="AI Voice Receptionist (Retell/Twilio)">AI Voice Receptionist (Sub-800ms)</option>
                       <option value="Real Estate Lead Qualification Engine">Real Estate Lead Qualification Engine</option>
                       <option value="Custom CRM & ERP Automation">Custom CRM &amp; ERP Automation</option>
                       <option value="Custom Web & Mobile App Platform">Custom Web &amp; Mobile App Platform</option>
                       <option value="Enterprise AI Consulting & Blueprint">Enterprise AI Consulting &amp; Blueprint</option>
+                      <option value="Custom System / Other">Custom System / Other (Specify below)</option>
                     </select>
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-white/80">Estimated Monthly Project Budget *</label>
-                    <select required name="budget" className="w-full bg-black border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-accent-electric transition-colors appearance-none">
+                    <select 
+                      required 
+                      name="budget" 
+                      value={selectedBudget}
+                      onChange={(e) => setSelectedBudget(e.target.value)}
+                      className="w-full bg-black border border-white/10 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-accent-electric transition-colors appearance-none cursor-pointer"
+                    >
                       <option value="">Select budget range</option>
                       <option value="₹50k - ₹1.5L">₹50k - ₹1.5L (Starter Systems)</option>
                       <option value="₹1.5L - ₹5L">₹1.5L - ₹5L (Growth Infrastructure)</option>
                       <option value="₹5L+">₹5L+ (Enterprise Custom Scale)</option>
+                      <option value="Custom Budget / Flexible">Custom Budget / Flexible (To be discussed)</option>
                     </select>
                   </div>
                 </div>
+
+                {/* Conditional Custom Field Inputs */}
+                {(selectedService === "Custom System / Other" || selectedBudget === "Custom Budget / Flexible") && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-accent-electric/5 p-4 rounded-2xl border border-accent-electric/20"
+                  >
+                    {selectedService === "Custom System / Other" && (
+                      <div className="space-y-2 col-span-1">
+                        <label className="text-sm font-medium text-accent-electric">Custom System Details *</label>
+                        <input 
+                          required 
+                          name="customServiceDetails" 
+                          type="text" 
+                          className="w-full bg-black border border-accent-electric/40 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-electric" 
+                          placeholder="e.g. AI WhatsApp bot + POS integration" 
+                        />
+                      </div>
+                    )}
+                    {selectedBudget === "Custom Budget / Flexible" && (
+                      <div className="space-y-2 col-span-1">
+                        <label className="text-sm font-medium text-accent-electric">Custom Budget Details *</label>
+                        <input 
+                          required 
+                          name="customBudgetDetails" 
+                          type="text" 
+                          className="w-full bg-black border border-accent-electric/40 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-electric" 
+                          placeholder="e.g. Milestone based / Equity / Retainer" 
+                        />
+                      </div>
+                    )}
+                  </motion.div>
+                )}
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-white/80">Operational Pain Points &amp; Goals</label>
