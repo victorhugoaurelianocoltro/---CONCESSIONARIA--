@@ -82,7 +82,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-          className="text-[36px] sm:text-[54px] md:text-[68px] font-semibold leading-[1.12] text-center max-w-[950px] tracking-tight"
+          className="text-[36px] sm:text-[48px] md:text-[62px] font-medium leading-[1.15] text-center max-w-[900px] tracking-tight"
           style={{
             backgroundImage: "linear-gradient(144.5deg, #FFFFFF 28%, rgba(255,255,255,0.7) 115%)",
             WebkitBackgroundClip: "text",
@@ -91,7 +91,7 @@ export default function Hero() {
             color: "transparent"
           }}
         >
-          <TextDecode text="Convert Leads While Your Competitors Are Still Dialing." />
+          <TextDecode text="We Build the AI Systems That Do Your 9-to-5 For You." />
         </motion.h1>
 
         {/* Subtitle */}
@@ -99,84 +99,37 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-          className="mt-[24px] mb-[36px] text-[16px] md:text-[19px] font-normal text-white/80 max-w-[780px] text-center leading-relaxed"
+          className="mt-[24px] mb-[40px] text-[15px] md:text-[18px] font-normal text-white/70 max-w-[720px] text-center leading-relaxed"
         >
-          Sub-800ms Voice AI &amp; Autonomous Sales Infrastructure for High-Volume Real Estate &amp; Healthcare Enterprises. We eliminate the 4-hour "Lead Decay" costing your firm lakhs every month.
+          Autonomous AI Voice Receptionists, Sub-800ms Lead Qualification Engines, and Tailored CRM Infrastructure built for Real Estate, Healthcare, and High-Volume Enterprises. Zero Fluff, Pure ROI.
         </motion.p>
 
-        {/* Instant AI Voice Latency Test Widget */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="w-full max-w-xl bg-black/60 border border-white/15 backdrop-blur-xl rounded-2xl p-4 sm:p-5 mb-8 shadow-[0_0_40px_rgba(78,163,224,0.15)]"
-        >
-          <div className="flex items-center justify-between mb-3 text-xs uppercase tracking-wider font-semibold text-accent-electric">
-            <span className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              Live Agent Sandbox (&lt; 800ms Latency)
-            </span>
-            <span className="text-white/40">Zero Waiting</span>
-          </div>
-
-          <form 
-            onSubmit={(e) => {
-              e.preventDefault();
-              window.open("https://wa.me/919081553331?text=Hi%20ParvInfoSoft!%20Send%20me%20a%20live%20AI%20voice%20agent%20audio%20demo%20on%20WhatsApp", "_blank");
-            }}
-            className="flex flex-col sm:flex-row gap-3"
-          >
-            <input 
-              type="tel"
-              required
-              placeholder="Enter phone number (+91 / +1...)"
-              className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none focus:border-accent-electric transition-colors"
-            />
-            <button
-              type="submit"
-              className="px-6 py-3 rounded-xl bg-accent-electric text-black font-semibold text-sm hover:bg-white transition-all shadow-[0_0_20px_rgba(78,163,224,0.4)] whitespace-nowrap active:scale-95"
-            >
-              ⚡ Hear Instant Demo
-            </button>
-          </form>
-
-          <div className="mt-3 flex items-center justify-between text-[11px] text-white/50">
-            <span>📞 Receives instant call / audio sample</span>
-            <a 
-              href="https://wa.me/919081553331?text=Hi%20ParvInfoSoft!%20Send%20me%20a%20live%20AI%20voice%20agent%20audio%20demo%20on%20WhatsApp"
-              target="_blank"
-              rel="noreferrer"
-              className="text-accent-electric hover:underline font-medium"
-            >
-              Prefer WhatsApp Audio? Click Here →
-            </a>
-          </div>
-        </motion.div>
-
-        {/* Secondary Action Buttons */}
+        {/* Action Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+          transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <MagneticButton>
             <Link 
               href="/get-started"
-              className="relative inline-flex items-center justify-center p-[0.6px] rounded-full overflow-hidden group bg-white/20 hover:bg-white/40 transition-all active:scale-95"
+              className="relative inline-flex items-center justify-center p-[0.6px] rounded-full overflow-hidden group bg-accent-electric/40 hover:bg-accent-electric/70 transition-all shadow-[0_0_25px_rgba(78,163,224,0.3)] active:scale-95"
             >
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[50%] h-[3px] bg-white opacity-80 blur-[4px] group-hover:opacity-100 group-hover:w-[80%] transition-all duration-300"></div>
+              
               <div className="relative bg-white rounded-full px-[32px] py-[13px] h-full w-full flex items-center justify-center">
-                <span className="text-black text-[15px] font-semibold tracking-wide">Calculate Unchecked Lead Cost</span>
+                <span className="text-black text-[15px] font-semibold tracking-wide">Calculate My Automation ROI</span>
               </div>
             </Link>
           </MagneticButton>
 
           <MagneticButton>
             <Link 
-              href="/#system-builder"
+              href="/#demos"
               className="px-[30px] py-[13px] rounded-full border border-white/20 text-white font-medium text-[15px] hover:bg-white/10 transition-colors active:scale-95 bg-black/40 backdrop-blur-md flex items-center justify-center"
             >
-              Build Custom AI System
+              Explore Live AI Demos
             </Link>
           </MagneticButton>
         </motion.div>

@@ -1,14 +1,11 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import SystemsVisualizer from "@/components/SystemsVisualizer";
-import LatencyBenchmark from "@/components/LatencyBenchmark";
+import CinematicStoryScroll from "@/components/CinematicStoryScroll";
 import StatsStrip from "@/components/StatsStrip";
 import Services from "@/components/Services";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import ProgramHighlight from "@/components/ProgramHighlight";
 import ModulesTimeline from "@/components/ModulesTimeline";
-import ModularSystemBuilder from "@/components/ModularSystemBuilder";
-import AIGuardrails from "@/components/AIGuardrails";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import CTABanner from "@/components/CTABanner";
@@ -40,16 +37,13 @@ export default function Home() {
     <main className="min-h-screen relative bg-black selection:bg-accent-electric selection:text-white font-general">
       <Navbar />
       <Hero />
-      <SystemsVisualizer />
-      <LatencyBenchmark />
+      <CinematicStoryScroll />
       <StatsStrip />
       <About />
       <Services />
       <WhyChooseUs />
       <ProgramHighlight />
       <ModulesTimeline />
-      <ModularSystemBuilder />
-      <AIGuardrails />
       <MeetFounder />
       <LiveAIDemos />
       <SuccessStories />
