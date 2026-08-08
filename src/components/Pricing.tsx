@@ -7,24 +7,44 @@ import Link from "next/link";
 
 const plans = [
   {
-    name: "Starter",
-    price: "₹4,500",
-    desc: "For Beginners",
-    features: ["AI Fundamentals", "Basic Prompting", "Community Access", "Certificate"],
+    name: "Starter Automation",
+    price: "Custom Scope",
+    desc: "Estimated Time Saved: 15+ Hours/Week",
+    features: [
+      "Custom AI Chatbot & Lead Intake Agent",
+      "Automated WhatsApp & Email Follow-ups",
+      "Google Sheets / Basic CRM Integration",
+      "Sub-800ms API Response Latency",
+      "14-Day Delivery & Team Handover"
+    ],
     featured: false
   },
   {
-    name: "Skill Builder",
-    price: "₹8,500",
-    desc: "Most Popular",
-    features: ["Advanced Prompting", "Content Automation", "Freelance Guide", "1-on-1 Support", "Real Projects"],
+    name: "Growth AI Systems",
+    price: "Most Popular",
+    desc: "Estimated Time Saved: 40+ Hours/Week",
+    features: [
+      "Autonomous AI Voice Receptionist (Sub-800ms)",
+      "Headless n8n Workflow Orchestration",
+      "Cal.com & CRM Auto-Sync (Salesforce/HubSpot/Zoho)",
+      "Real Estate / Intent Parsing LLM",
+      "HIPAA / GDPR Data Privacy Masking",
+      "24/7 SLA Monitoring & Priority Support"
+    ],
     featured: true
   },
   {
-    name: "Income Accelerator",
-    price: "₹20,000",
-    desc: "For Business Scaling",
-    features: ["Complete Automation Setup", "Custom CRM Integration", "Lead Gen Workflows", "Agency Growth Blueprint", "Priority Mentorship"],
+    name: "Enterprise Infrastructure",
+    price: "Tailored Architecture",
+    desc: "Unlimited Scale & Dedicated SLA",
+    features: [
+      "Custom Fine-Tuned Domain LLMs",
+      "Multi-Agent Voice & Chat Infrastructure",
+      "Complete End-to-End ERP/CRM Automation",
+      "Dedicated AI Solutions Engineer",
+      "Custom On-Premise / Hybrid Cloud Deployment",
+      "99.9% Autonomous Uptime Guarantee"
+    ],
     featured: false
   }
 ];
@@ -41,8 +61,11 @@ export default function Pricing() {
           className="mb-20 text-center"
         >
           <h2 className="text-[40px] md:text-[56px] font-medium text-white leading-[1.1] mb-6">
-            Choose Your Growth Path
+            Outcome-Based AI Automation Systems
           </h2>
+          <p className="text-white/60 text-lg max-w-xl mx-auto mb-6">
+            Clear ROI, zero fluff, and predictable scale for high-volume businesses.
+          </p>
           <div className="w-[60px] h-[2px] bg-accent-electric mx-auto"></div>
         </motion.div>
 
@@ -91,7 +114,7 @@ export default function Pricing() {
                       : "bg-white/10 text-white hover:bg-white/20 active:scale-95"
                   }`}
                 >
-                  Get Started
+                  Calculate My Automation ROI
                 </Link>
               </MagneticButton>
             </motion.div>

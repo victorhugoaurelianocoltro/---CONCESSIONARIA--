@@ -8,12 +8,12 @@ import TextDecode from "./TextDecode";
 
 
 const services = [
-  { title: "AI Automation Solutions", icon: Cpu },
-  { title: "Website Development", icon: LayoutTemplate },
-  { title: "Mobile App Development", icon: Smartphone },
-  { title: "CRM / ERP Systems", icon: Database },
-  { title: "Branding & Marketing", icon: Megaphone },
-  { title: "AI Training Programs", icon: GraduationCap },
+  { title: "AI Voice & Sales Systems", icon: Cpu },
+  { title: "Custom Web Development", icon: LayoutTemplate },
+  { title: "Mobile App Platforms", icon: Smartphone },
+  { title: "CRM / ERP Automation", icon: Database },
+  { title: "Lead Generation Engines", icon: Megaphone },
+  { title: "AI Strategy & Consulting", icon: GraduationCap },
 ];
 
 export default function Services() {

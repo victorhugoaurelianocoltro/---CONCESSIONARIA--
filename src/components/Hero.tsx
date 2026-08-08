@@ -68,12 +68,12 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="flex items-center gap-2 rounded-[20px] bg-white/10 border border-white/20 px-4 py-2 mb-[40px]"
+          className="flex items-center gap-2 rounded-[20px] bg-white/10 border border-white/20 px-4 py-2 mb-[32px]"
         >
-          <div className="w-[4px] h-[4px] bg-white rounded-full"></div>
+          <div className="w-[6px] h-[6px] bg-accent-electric rounded-full animate-pulse"></div>
           <span className="text-[13px] font-medium tracking-wide">
-            <span className="text-white/60">Trusted by businesses worldwide since</span>
-            <span className="text-white"> 2026</span>
+            <span className="text-white/60">Enterprise B2B AI Agency | Established </span>
+            <span className="text-white font-semibold">2024</span>
           </span>
         </motion.div>
 
@@ -82,16 +82,16 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-          className="text-[36px] md:text-[56px] font-medium leading-[1.28] text-center max-w-[850px]"
+          className="text-[36px] sm:text-[48px] md:text-[62px] font-medium leading-[1.15] text-center max-w-[900px] tracking-tight"
           style={{
-            backgroundImage: "linear-gradient(144.5deg, #FFFFFF 28%, rgba(0,0,0,0) 115%)",
+            backgroundImage: "linear-gradient(144.5deg, #FFFFFF 28%, rgba(255,255,255,0.7) 115%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
             color: "transparent"
           }}
         >
-          <TextDecode text="We build AI Sales & Customer Support Systems for Real Estate Companies." />
+          <TextDecode text="We Build the AI Systems That Do Your 9-to-5 For You." />
         </motion.h1>
 
         {/* Subtitle */}
@@ -99,27 +99,37 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-          className="mt-[24px] mb-[40px] text-[15px] font-normal text-white/70 max-w-[680px] text-center leading-relaxed"
+          className="mt-[24px] mb-[40px] text-[15px] md:text-[18px] font-normal text-white/70 max-w-[720px] text-center leading-relaxed"
         >
-          Automating lead qualification, booking calendar logistics, and customer support round-the-clock with custom, low-latency AI agents tailored for high-volume real estate developers and brokers.
+          Autonomous AI Voice Receptionists, Sub-800ms Lead Qualification Engines, and Tailored CRM Infrastructure built for Real Estate, Healthcare, and High-Volume Enterprises. Zero Fluff, Pure ROI.
         </motion.p>
 
-        {/* CTA Button */}
+        {/* Action Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <MagneticButton>
             <Link 
               href="/get-started"
-              className="relative inline-flex items-center justify-center p-[0.6px] rounded-full overflow-hidden group bg-white/40 hover:bg-white/60 transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] active:scale-95"
+              className="relative inline-flex items-center justify-center p-[0.6px] rounded-full overflow-hidden group bg-accent-electric/40 hover:bg-accent-electric/70 transition-all shadow-[0_0_25px_rgba(78,163,224,0.3)] active:scale-95"
             >
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[50%] h-[3px] bg-white opacity-80 blur-[4px] group-hover:opacity-100 group-hover:w-[80%] group-hover:bg-accent-electric transition-all duration-300"></div>
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[50%] h-[3px] bg-white opacity-80 blur-[4px] group-hover:opacity-100 group-hover:w-[80%] transition-all duration-300"></div>
               
-              <div className="relative bg-white rounded-full px-[29px] py-[11px] h-full w-full flex items-center justify-center">
-                <span className="text-black text-[14px] font-medium">Start Your Journey</span>
+              <div className="relative bg-white rounded-full px-[32px] py-[13px] h-full w-full flex items-center justify-center">
+                <span className="text-black text-[15px] font-semibold tracking-wide">Calculate My Automation ROI</span>
               </div>
+            </Link>
+          </MagneticButton>
+
+          <MagneticButton>
+            <Link 
+              href="/#demos"
+              className="px-[30px] py-[13px] rounded-full border border-white/20 text-white font-medium text-[15px] hover:bg-white/10 transition-colors active:scale-95 bg-black/40 backdrop-blur-md flex items-center justify-center"
+            >
+              Explore Live AI Demos
             </Link>
           </MagneticButton>
         </motion.div>

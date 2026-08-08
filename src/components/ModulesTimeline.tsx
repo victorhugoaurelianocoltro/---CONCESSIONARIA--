@@ -3,16 +3,10 @@
 import { motion } from "framer-motion";
 
 const modules = [
-  "AI Fundamentals",
-  "Prompt Engineering",
-  "AI Tools Mastery",
-  "AI Automation",
-  "Content Creation",
-  "Data Analytics",
-  "AI Design",
-  "AI for Developers",
-  "AI Marketing",
-  "Freelancing with AI"
+  "Phase 01: Discovery & Workflow Audit",
+  "Phase 02: Architecture & Voice AI Setup",
+  "Phase 03: Headless n8n & CRM Integration",
+  "Phase 04: Live Testing & 24/7 Deployment"
 ];
 
 export default function ModulesTimeline() {
@@ -27,8 +21,11 @@ export default function ModulesTimeline() {
           className="mb-20 text-center"
         >
           <h2 className="text-[40px] md:text-[56px] font-medium text-white leading-[1.1] mb-6">
-            What You’ll Learn
+            How We Deploy Your Custom AI System
           </h2>
+          <p className="text-white/60 text-lg max-w-xl mx-auto mb-6">
+            From initial workflow audit to full autonomous operation in 14 days.
+          </p>
           <div className="w-[60px] h-[2px] bg-accent-electric mx-auto shadow-[0_0_10px_rgba(78,163,224,0.8)]"></div>
         </motion.div>
 

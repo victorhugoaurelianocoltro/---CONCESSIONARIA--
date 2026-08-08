@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Terms of Service | ParvInfoSoft",
-  description: "Read the Terms of Service and user agreements for ParvInfoSoft's IT solutions and AI training programs.",
+  description: "Read the Terms of Service and user agreements for ParvInfoSoft's B2B AI solutions and software engineering services.",
 };
 
 export default function TermsOfServicePage() {
@@ -20,19 +20,19 @@ export default function TermsOfServicePage() {
             <h2 className="text-2xl font-medium text-white mb-4">1. Agreement to Terms</h2>
             <p className="text-white/70 leading-relaxed">
               These Terms of Service constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you") and ParvInfoSoft ("Company", "we", "us", or "our"), 
-              concerning your access to and use of our website as well as any other media form, related services, or training programs. 
+              concerning your access to and use of our website as well as any related B2B AI and software engineering services. 
               By accessing our services, you agree that you have read, understood, and agreed to be bound by all of these Terms of Service.
             </p>
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-medium text-white mb-4">2. Services and Training Programs</h2>
+            <h2 className="text-2xl font-medium text-white mb-4">2. B2B AI &amp; Engineering Services</h2>
             <p className="text-white/70 leading-relaxed mb-4">
-              ParvInfoSoft operates as a dual-entity providing both IT solutions and educational training:
+              ParvInfoSoft provides enterprise AI systems, autonomous voice receptionists, custom CRM/ERP integrations, and web/mobile app engineering:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-white/70">
-              <li><strong>Educational Training:</strong> We offer courses related to AI automation, prompt engineering, and digital skills. Course materials, curriculum, and strategies shared are intellectual property of ParvInfoSoft and may not be redistributed.</li>
-              <li><strong>IT Services:</strong> We provide web development, app development, CRM/ERP implementation, and AI automation for businesses. Service timelines, deliverables, and exact pricing are defined in individual client contracts.</li>
+              <li><strong>Systems Delivery &amp; SLA:</strong> Service timelines, deliverables, IP ownership, and exact SLA commitments are defined in individual client master service agreements (MSA) and statements of work (SOW).</li>
+              <li><strong>Data Privacy &amp; Masking:</strong> We enforce enterprise-grade data encryption and masking to ensure client and customer records remain strictly private.</li>
             </ul>
           </section>
 

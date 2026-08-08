@@ -3,8 +3,8 @@
 import React, { useEffect, useState } from "react";
 
 export default function TextDecode({ text, className = "" }: { text: string, className?: string }) {
-  // Start with empty string to avoid hydration mismatch, or just start with scrambled
-  const [displayText, setDisplayText] = useState("");
+  // Start with full text so HTML renders text instantly for SEO & immediate paint
+  const [displayText, setDisplayText] = useState(text);
   const chars = "abcdefghijklmnopqrstuvwxyz0123456789"; // Using uniform width characters to prevent layout jitter
 
   useEffect(() => {

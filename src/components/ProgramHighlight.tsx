@@ -6,11 +6,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 const features = [
-  "Live Classes",
-  "Certificate",
-  "Community Support",
-  "Lifetime Updates",
-  "Real Projects"
+  "Retell AI + Twilio Voice Agents",
+  "Cal.com Headless Calendar Sync",
+  "n8n Custom Workflow Engine",
+  "Salesforce, HubSpot & Zoho Sync",
+  "HIPAA / GDPR Data Privacy Masking",
+  "24/7 SLA Monitoring & Analytics"
 ];
 
 export default function ProgramHighlight() {
@@ -31,7 +32,7 @@ export default function ProgramHighlight() {
               <div className="inline-flex items-center gap-2 rounded-full bg-accent-electric/10 border border-accent-electric/20 px-4 py-1.5 mb-8">
                 <div className="w-2 h-2 bg-accent-electric rounded-full animate-pulse"></div>
                 <span className="text-[13px] font-medium text-accent-electric uppercase tracking-widest">
-                  Bestselling Program
+                  Sub-800ms Voice AI Latency
                 </span>
               </div>
 
@@ -42,15 +43,15 @@ export default function ProgramHighlight() {
                     WebkitTextFillColor: "transparent",
                   }}
               >
-                India’s Most Practical AI Mastery Program
+                Autonomous AI Voice & Sales Infrastructure
               </h2>
               
-              <p className="text-[16px] md:text-[18px] text-white/60 leading-relaxed mb-10 max-w-[500px]">
-                Learn AI tools, automation, content creation & income skills in 30 days. Practical learning designed for students, freelancers and business owners.
+              <p className="text-[16px] md:text-[18px] text-white/60 leading-relaxed mb-10 max-w-[520px]">
+                Intercept inbound calls, qualify complex real estate leads, verify data, and book calendar site-visits instantly—all handled by custom AI agents trained specifically on your business workflows.
               </p>
 
               {/* Bullet Features */}
-              <div className="grid grid-cols-2 gap-y-4 gap-x-8 mb-12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 mb-12 w-full">
                 {features.map((feature, i) => (
                   <motion.div 
                     key={i}
@@ -60,7 +61,7 @@ export default function ProgramHighlight() {
                     transition={{ delay: i * 0.1 }}
                     className="flex items-center gap-3"
                   >
-                    <CheckCircle2 size={18} className="text-accent-electric" />
+                    <CheckCircle2 size={18} className="text-accent-electric shrink-0" />
                     <span className="text-white/80 font-medium text-[15px]">{feature}</span>
                   </motion.div>
                 ))}
@@ -68,12 +69,12 @@ export default function ProgramHighlight() {
 
               {/* CTA */}
               <Link 
-                href="/#pricing"
+                href="/get-started"
                 className="relative inline-flex items-center justify-center p-[1px] rounded-full overflow-hidden group bg-white/20 transition-all hover:bg-white/40"
               >
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[60%] h-[2px] bg-white opacity-60 blur-[3px] group-hover:opacity-100 transition-opacity"></div>
                 <div className="relative bg-transparent rounded-full px-[32px] py-[16px] h-full w-full flex items-center justify-center">
-                  <span className="text-white text-[15px] font-medium tracking-wide">Explore Program</span>
+                  <span className="text-white text-[15px] font-medium tracking-wide">Calculate My Automation ROI</span>
                 </div>
               </Link>
             </motion.div>

@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { servicesData, trainingData, solutionsData, resourcesData } from '@/data/pages';
+import { servicesData, solutionsData, resourcesData } from '@/data/pages';
 import { caseStudiesData } from '@/data/case-studies';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -8,7 +8,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Create mapping of slug to category
   const allPages: Record<string, string> = {
     ...Object.keys(servicesData).reduce((acc, key) => ({ ...acc, [key]: 'services' }), {}),
-    ...Object.keys(trainingData).reduce((acc, key) => ({ ...acc, [key]: 'training' }), {}),
     ...Object.keys(solutionsData).reduce((acc, key) => ({ ...acc, [key]: 'solutions' }), {}),
     ...Object.keys(resourcesData).reduce((acc, key) => ({ ...acc, [key]: 'resources' }), {}),
     ...Object.keys(caseStudiesData).reduce((acc, key) => ({ ...acc, [key]: 'resources/case-studies' }), {}),

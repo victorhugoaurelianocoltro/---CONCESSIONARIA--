@@ -53,9 +53,9 @@ const stats = [
     explodeY: 180,
   },
   {
-    id: "trainer",
-    label: "AI Trainer",
-    sub: "1000+ students",
+    id: "systems-architect",
+    label: "Systems Architect",
+    sub: "Sub-800ms AI Agents",
     icon: Users,
     color: "#f59e0b",
     // explode direction: bottom-right
@@ -198,14 +198,14 @@ export default function MeetFounder() {
 
               <p className="text-[16px] md:text-[18px] text-white/60 leading-relaxed mb-10">
                 Founder, Director &amp; CEO of ParvInfoSoft. Passionate about
-                AI innovation, digital systems, and helping businesses scale
-                through modern technology. Under his leadership, ParvInfoSoft
-                has become a leading premium{" "}
+                AI innovation, autonomous agent architecture, and helping businesses scale
+                through cutting-edge automation. Under his leadership, ParvInfoSoft
+                has become a premier{" "}
                 <strong>
-                  AI Training Institute and IT Solutions provider in Surat,
-                  Gujarat
+                  B2B AI Solutions Provider &amp; Systems Engineering Agency in Surat,
+                  Gujarat (4019 The Palladium Mall)
                 </strong>
-                , dedicated to building India's future-ready AI ecosystem.
+                , serving high-volume real estate developers and global enterprises.
               </p>
 
               <Link

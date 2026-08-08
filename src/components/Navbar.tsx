@@ -13,44 +13,42 @@ const navItems = [
     title: "Services",
     href: "/#services",
     dropdown: [
-      { title: "AI Automation", href: "/services/ai-automation" },
-      { title: "Web Development", href: "/services/web-development" },
-      { title: "App Development", href: "/services/app-development" },
-      { title: "CRM / ERP Systems", href: "/services/crm-erp" },
-      { title: "Branding Solutions", href: "/services/branding" },
-      { title: "Consulting", href: "/services/consulting" }
-    ]
-  },
-  {
-    title: "Training",
-    href: "/#pricing",
-    dropdown: [
-      { title: "AI Foundation Program", href: "/training/ai-foundation" },
-      { title: "AI Skill Builder", href: "/training/skill-builder" },
-      { title: "AI Income Accelerator", href: "/training/income-accelerator" },
-      { title: "Corporate Training", href: "/training/corporate" },
-      { title: "Workshops", href: "/training/workshops" }
+      { title: "AI Voice Receptionists", href: "/services/ai-automation" },
+      { title: "Real Estate AI Systems", href: "/solutions/lead-generation" },
+      { title: "Custom Web Development", href: "/services/web-development" },
+      { title: "Mobile App Development", href: "/services/app-development" },
+      { title: "CRM / ERP Automation", href: "/services/crm-erp" },
+      { title: "AI Strategy & Consulting", href: "/services/consulting" }
     ]
   },
   {
     title: "Solutions",
-    href: "/#portfolio",
+    href: "/#solutions",
     dropdown: [
-      { title: "Business Automation", href: "/solutions/business-automation" },
-      { title: "Lead Generation Systems", href: "/solutions/lead-generation" },
-      { title: "Chatbots", href: "/solutions/chatbots" },
-      { title: "AI Agents", href: "/solutions/ai-agents" },
-      { title: "E-commerce Growth", href: "/solutions/ecommerce-growth" }
+      { title: "Business Process Automation", href: "/solutions/business-automation" },
+      { title: "Lead Generation Engines", href: "/solutions/lead-generation" },
+      { title: "Custom AI Chatbots", href: "/solutions/chatbots" },
+      { title: "Autonomous AI Agents", href: "/solutions/ai-agents" },
+      { title: "E-commerce AI Scale", href: "/solutions/ecommerce-growth" }
     ]
   },
   {
-    title: "Resources",
-    href: "/#faq",
+    title: "Case Studies",
+    href: "/resources/case-studies",
     dropdown: [
-      { title: "Blog", href: "/resources/blog" },
-      { title: "Free Tools", href: "/resources/tools" },
-      { title: "Case Studies", href: "/resources/case-studies" },
-      { title: "FAQs", href: "/resources/faqs" },
+      { title: "Healthcare Voice Receptionist", href: "/resources/case-studies/ai-hospital-receptionist" },
+      { title: "Live AI System Demos", href: "/#demos" },
+      { title: "All Client Impact Reports", href: "/resources/case-studies" }
+    ]
+  },
+  {
+    title: "Company",
+    href: "/#about",
+    dropdown: [
+      { title: "About ParvInfoSoft", href: "/#about" },
+      { title: "Meet the Founder", href: "/#founder" },
+      { title: "Surat Office Presence", href: "/#founder" },
+      { title: "Systems FAQ", href: "/#faq" },
       { title: "Contact Support", href: "/resources/support" }
     ]
   }
@@ -162,7 +160,7 @@ export default function Navbar() {
             >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[60%] h-[2px] bg-white opacity-60 blur-[3px] group-hover:opacity-100 transition-opacity"></div>
               <div className="relative bg-black rounded-full px-[29px] py-[11px] h-full w-full flex items-center justify-center transition-colors group-hover:bg-[#0A0A0A]">
-                <span className="text-white text-[14px] font-medium">Get Started</span>
+                <span className="text-white text-[14px] font-medium">Calculate ROI</span>
               </div>
             </Link>
           </MagneticButton>
@@ -233,7 +231,7 @@ export default function Navbar() {
                   className="w-full block py-5 rounded-full bg-white text-black text-center text-xl font-medium shadow-[0_0_30px_rgba(255,255,255,0.2)] active:scale-95 transition-transform sticky bottom-6"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Get Started
+                  Calculate ROI
                 </Link>
               </motion.div>
             </div>

@@ -36,43 +36,15 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.parvinfosoft.com"),
-  title: "ParvInfoSoft | AI Training Institute & IT Services Company in Surat, India",
-  description: "ParvInfoSoft is a leading AI Institute in Surat, Gujarat, delivering hands-on AI training, AI tools mastery, and automation skills that help students and professionals build real income opportunities. We also provide expert web development, app development, and digital marketing services, enabling businesses to scale with AI automation, CRM solutions, and custom software. Serving clients across India and worldwide.",
+  title: "ParvInfoSoft | High-Performance B2B AI Automation & Voice AI Agency",
+  description: "ParvInfoSoft is a premier B2B AI Agency based in Surat, Gujarat & serving global clients. We engineer autonomous AI voice receptionists, sub-800ms lead qualification agents, custom CRM integrations, and enterprise automation infrastructure for real estate, healthcare, and high-volume businesses.",
   keywords: [
-    "AI course online","Artificial Intelligence training","Learn AI from scratch","AI certification course",
-    "Machine learning course online","Data science course online","Deep learning course","Generative AI course",
-    "ChatGPT course for beginners","AI tools training","AI automation tools","AI agents development",
-    "No code AI course","Python for AI","AI for beginners",
-
-    "Best AI course in India","AI training institute India","Data science institute India","AI certification India",
-    "IT training institute India","Software training India","Digital skills training India","AI development company India",
-    "Automation company India","IT services company India","Startup tech services India",
-
-    "AI course in Surat","Best AI institute in Surat","Data science course Surat","IT training institute Surat",
-    "Software company in Surat","Website development company Surat","Digital marketing agency Surat",
-    "AI automation company Surat","Lead generation company Surat","AI course in Gujarat",
-    "Best IT institute in Gujarat","Data science training Gujarat","Software development Gujarat","AI training Gujarat",
-    "Tech institute Gujarat",
-
-    "AI automation services","AI development company","Web development services","Custom software development",
-    "SaaS development company","CRM development services","Lead generation services worldwide",
-    "Digital transformation company","Business automation services","AI consulting services",
-    "IT outsourcing company","Remote development team","AI solutions for business","Automation agency global",
-
-    "Hire AI developer","Hire web developer","Hire software developer India","AI solutions for startups",
-    "Automation for small business","CRM for small business","AI chatbot for business",
-    "WhatsApp automation services","Marketing automation agency","Lead generation for business",
-    "Growth hacking agency","Build AI chatbot for website","Business process automation",
-
-    "Best AI course for beginners 2026","Learn AI step by step","AI course with placement India",
-    "Affordable AI course online","Learn AI without coding","AI tools for business growth",
-    "Automation tools for startups","How to start AI agency","AI for freelancers","AI for business owners",
-    "Best data science course for beginners","Online AI classes with certificate","AI course for students India",
-    "Practical AI training program",
-
-    "Future of AI careers","AI vs human jobs","AI tools you must know","Top AI tools 2026",
-    "AI trends 2026","Best tools for productivity","Automation hacks for business",
-    "AI side hustle ideas","Earn money using AI","AI business ideas"
+    "AI automation agency","AI voice agents development","Retell AI voice receptionist",
+    "Real estate AI automation","Sub-800ms voice AI latency","AI lead qualification system",
+    "Headless n8n workflow automation","Custom CRM development","AI chatbot for business",
+    "Custom AI solutions Surat","AI development company Surat","Website development company Surat",
+    "App development agency Surat","B2B AI agency India","Enterprise AI solutions India",
+    "WhatsApp API automation","Custom LLM integration","Automated sales pipelines"
   ],
   alternates: {
     canonical: "https://www.parvinfosoft.com",
@@ -81,8 +53,8 @@ export const metadata: Metadata = {
     icon: '/parv-logo-icon.png',
   },
   openGraph: {
-    title: "ParvInfoSoft | AI Training & IT Services in Surat",
-    description: "ParvInfoSoft is a leading AI Institute in Surat, Gujarat, delivering hands-on AI training, AI tools mastery, and automation skills that help students and professionals build real income opportunities. We also provide expert web development, app development, and digital marketing services, enabling businesses to scale with AI automation, CRM solutions, and custom software. Serving clients across India and worldwide.",
+    title: "ParvInfoSoft | High-Performance B2B AI Automation & Voice AI Agency",
+    description: "ParvInfoSoft is a premier B2B AI Agency based in Surat, Gujarat & serving global clients. We engineer autonomous AI voice receptionists, sub-800ms lead qualification agents, custom CRM integrations, and enterprise automation infrastructure for real estate, healthcare, and high-volume businesses.",
     url: "https://www.parvinfosoft.com",
     siteName: "ParvInfoSoft",
     images: [
@@ -90,7 +62,7 @@ export const metadata: Metadata = {
         url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "ParvInfoSoft - AI Training and IT Services",
+        alt: "ParvInfoSoft - B2B AI Systems & Automation Agency",
       },
     ],
     locale: "en_IN",
@@ -98,8 +70,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ParvInfoSoft | AI Training & IT Services",
-    description: "ParvInfoSoft is a leading AI Institute in Surat, Gujarat, delivering hands-on AI training, AI tools mastery, and automation skills that help students and professionals build real income opportunities. We also provide expert web development, app development, and digital marketing services, enabling businesses to scale with AI automation, CRM solutions, and custom software. Serving clients across India and worldwide.",
+    title: "ParvInfoSoft | High-Performance B2B AI Agency",
+    description: "Engineering autonomous AI voice agents, sub-800ms lead qualification, and enterprise automation infrastructure.",
     images: ["/logo.png"],
   },
   robots: {
@@ -120,18 +92,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // JSON-LD Schema for Educational Organization and Local Business
+  // JSON-LD Schema for LocalBusiness & ProfessionalService
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["EducationalOrganization", "LocalBusiness"],
+        "@type": ["LocalBusiness", "ProfessionalService"],
         "@id": "https://www.parvinfosoft.com/#organization",
         "name": "ParvInfoSoft",
         "url": "https://www.parvinfosoft.com/",
         "image": "https://www.parvinfosoft.com/logo.png",
         "priceRange": "$$",
-        "description": "Premium AI Training Institute and IT Solutions company serving Surat, Gujarat, India and worldwide.",
+        "description": "High-Performance B2B AI Agency and Systems Engineering firm serving Surat, Gujarat, India and enterprise clients worldwide.",
         "telephone": "+91-9081553331",
         "email": "parvinfosoftadmin@gmail.com",
         "founder": {
@@ -154,43 +126,38 @@ export default function RootLayout({
         },
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
-          "name": "ParvInfoSoft Services & Training",
+          "name": "ParvInfoSoft B2B AI & IT Services",
           "itemListElement": [
             {
               "@type": "OfferCatalog",
-              "name": "IT Services",
+              "name": "AI & Business Automation Systems",
               "itemListElement": [
                 {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service",
-                    "name": "AI Automation Solutions"
+                    "name": "Autonomous AI Voice Receptionists & Sales Agents"
                   }
                 },
                 {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service",
-                    "name": "Website & Mobile App Development"
+                    "name": "Real Estate Lead Qualification Systems"
                   }
-                }
-              ]
-            },
-            {
-              "@type": "OfferCatalog",
-              "name": "AI Training Programs",
-              "itemListElement": [
+                },
                 {
                   "@type": "Offer",
                   "itemOffered": {
-                    "@type": "Course",
-                    "name": "India's Most Practical AI Mastery Program",
-                    "description": "Learn AI tools, automation, content creation & income skills in 30 days.",
-                    "provider": {
-                      "@type": "Organization",
-                      "name": "ParvInfoSoft",
-                      "url": "https://www.parvinfosoft.com/"
-                    }
+                    "@type": "Service",
+                    "name": "Custom CRM & ERP Automation"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Custom Web & Mobile App Development"
                   }
                 }
               ]
@@ -215,10 +182,10 @@ export default function RootLayout({
           },
           {
             "@type": "Question",
-            "name": "Is ParvInfoSoft a training institute or an IT company?",
+            "name": "What services does ParvInfoSoft provide?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "We are both. We are a premium IT solutions provider that builds real-world software and automation systems, and we use that exact expertise to train our students through our academy."
+              "text": "We are a high-performance B2B AI Agency specializing in autonomous AI voice receptionists, sub-800ms lead qualification engines, custom CRM/ERP integration, and enterprise web/mobile development."
             }
           },
           {
@@ -226,7 +193,7 @@ export default function RootLayout({
             "name": "Who is the founder of ParvInfoSoft?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "ParvInfoSoft was founded by Kaushal Tiwari, an AI strategist and business builder dedicated to bringing premium AI education and automation to India."
+              "text": "ParvInfoSoft was founded by Kaushal Tiwari, an AI systems architect and entrepreneur dedicated to building enterprise AI automation systems in Surat and globally."
             }
           }
         ]

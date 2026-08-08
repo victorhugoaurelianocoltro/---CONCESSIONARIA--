@@ -40,18 +40,18 @@ export default function CTABanner() {
           viewport={{ once: false }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-[36px] sm:text-[48px] md:text-[72px] font-medium text-white leading-[1.05] mb-6 tracking-tight"
+          <h2 className="text-[36px] sm:text-[48px] md:text-[64px] font-medium text-white leading-[1.05] mb-6 tracking-tight"
               style={{
                 backgroundImage: "linear-gradient(180deg, #FFFFFF 0%, rgba(255,255,255,0.7) 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
           >
-            Ready to Build. Automate. Grow.
+            Ready to Automate Your Business Operations?
           </h2>
           
-          <p className="text-xl md:text-2xl text-white/60 mb-12 max-w-2xl mx-auto font-medium">
-            Join ParvInfoSoft and step into the AI-powered future.
+          <p className="text-lg md:text-xl text-white/60 mb-12 max-w-2xl mx-auto font-medium">
+            Stop losing leads to manual bottlenecks. Deploy autonomous AI voice agents and custom workflows in as little as 14 days.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -62,7 +62,7 @@ export default function CTABanner() {
               >
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[60%] h-[2px] bg-white opacity-60 blur-[3px] group-hover:opacity-100 transition-opacity"></div>
                 <div className="relative bg-white rounded-full px-[40px] py-[18px] h-full w-full flex items-center justify-center shadow-[0_0_30px_rgba(255,255,255,0.2)]">
-                  <span className="text-black text-[16px] font-medium tracking-wide">Get Started</span>
+                  <span className="text-black text-[16px] font-medium tracking-wide">Calculate My Automation ROI</span>
                 </div>
               </Link>
             </MagneticButton>
@@ -72,7 +72,7 @@ export default function CTABanner() {
                 href="/get-started"
                 className="px-[40px] py-[18px] rounded-full border border-white/20 text-white font-medium text-[16px] hover:bg-white/10 transition-colors w-full sm:w-auto active:scale-95 bg-transparent/50 backdrop-blur-md"
               >
-                Join Waitlist
+                Book Strategy Call
               </Link>
             </MagneticButton>
           </div>

@@ -55,17 +55,17 @@ export default function AISearchModal({ isOpen, onClose }: AISearchModalProps) {
       let links: { label: string; url: string }[] = [];
 
       if (lower.includes("price") || lower.includes("cost") || lower.includes("fee")) {
-        aiResponse = "Our training programs start at ₹4,500. Corporate training and business automation services are custom quoted starting from ₹80,000 based on your specific requirements.";
-        links = [{ label: "View Pricing Details", url: "/#pricing" }];
-      } else if (lower.includes("course") || lower.includes("learn") || lower.includes("training")) {
-        aiResponse = "We offer multiple AI programs. The Foundation program is best for absolute beginners, while the Skill Builder helps you monetize your AI skills.";
+        aiResponse = "Our B2B AI Automation and Voice Agent solutions are custom-quoted based on project scope, API latency SLA, and workflow complexity. Click below to calculate your ROI.";
+        links = [{ label: "Calculate Automation ROI", url: "/get-started" }];
+      } else if (lower.includes("voice") || lower.includes("real estate") || lower.includes("agent")) {
+        aiResponse = "We build autonomous AI Voice Receptionists with sub-800ms latency, headless n8n workflow integration, and automatic real estate lead qualification.";
         links = [
-          { label: "AI Foundation", url: "/training/ai-foundation" },
-          { label: "AI Skill Builder", url: "/training/skill-builder" }
+          { label: "AI Voice Solutions", url: "/services/ai-automation" },
+          { label: "Real Estate Systems", url: "/solutions/lead-generation" }
         ];
       } else if (lower.includes("founder") || lower.includes("kaushal")) {
-        aiResponse = "ParvInfoSoft was founded by Kaushal Tiwari, an AI Strategist and business builder dedicated to bringing premium AI education and automation to India.";
-        links = [{ label: "Connect with Founder", url: "/#founder" }];
+        aiResponse = "ParvInfoSoft was founded by Kaushal Tiwari, an AI systems architect and entrepreneur building enterprise AI automation systems in Surat (The Palladium Mall) and globally.";
+        links = [{ label: "Meet the Founder", url: "/#founder" }];
       } else if (lower.includes("service") || lower.includes("automation") || lower.includes("build")) {
         aiResponse = "We build custom AI agents, automated workflows (Zapier/Make), and custom CRM systems tailored to your business operations.";
         links = [

@@ -3,10 +3,10 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "1000+", label: "Students Trained" },
-  { value: "500+", label: "Projects Guided" },
-  { value: "95%", label: "Satisfaction Rate" },
-  { value: "25+", label: "Industries Served" },
+  { value: "450+", label: "Leads Qualified / Day" },
+  { value: "< 800ms", label: "AI Voice Response Latency" },
+  { value: "₹2.4L+", label: "Avg. Client Monthly Savings" },
+  { value: "99.9%", label: "Autonomous System Uptime" },
 ];
 
 export default function StatsStrip() {
@@ -20,7 +20,7 @@ export default function StatsStrip() {
           className="text-center mb-16"
         >
           <h2 className="text-white/60 text-lg uppercase tracking-widest font-medium">
-            Trusted by Learners, Startups & Businesses Across India
+            Proven Performance Metrics for Real Estate & High-Volume Enterprises
           </h2>
         </motion.div>
 

@@ -6,28 +6,28 @@ import { Plus, Minus } from "lucide-react";
 
 const faqs = [
   {
-    q: "Is this beginner friendly?",
-    a: "Absolutely. We start from the absolute basics of AI and gradually move into advanced automation systems. No prior coding or technical experience is required."
+    q: "Can your AI agents integrate with our existing CRM (Salesforce, HubSpot, Zoho, LeadSquared)?",
+    a: "Yes. We build custom headless integrations using n8n and REST/GraphQL APIs. Your AI agents will read, qualify, and update leads in real-time directly inside your existing CRM with zero data latency."
   },
   {
-    q: "Will I get recordings?",
-    a: "Yes, all live sessions are recorded and uploaded to your student portal within 24 hours. You have lifetime access to these recordings."
+    q: "What is the response latency of your AI Voice Receptionists?",
+    a: "Our AI Voice Receptionists achieve sub-800ms latency—indistinguishable from a human operator. They handle natural interruptions, complex real estate inquiries, and calendar booking seamlessly."
   },
   {
-    q: "Is certificate included?",
-    a: "Yes. Upon successful completion of the mastery program and your final project, you will receive an industry-recognized certificate from ParvInfoSoft."
+    q: "How secure is our company and customer data?",
+    a: "We implement HIPAA, SOC-2, and GDPR-compliant data masking and encryption. Your sensitive customer records and proprietary business data remain fully protected and are never trained on public models."
   },
   {
-    q: "Do you offer business services?",
-    a: "Yes, apart from training, we operate as a full-scale IT and AI agency. We build custom CRMs, websites, apps, and AI automation workflows for businesses globally."
+    q: "How long does a custom AI automation project take to deploy?",
+    a: "Standard AI Voice & CRM Automation systems are deployed within 7 to 14 business days. Enterprise-wide custom integrations take 3 to 4 weeks, including stress testing and team onboarding."
   },
   {
-    q: "Can I learn freelancing?",
-    a: "Our Income Accelerator program specifically covers how to package your AI skills, find high-paying clients, and build a scalable freelance business."
+    q: "Do we need an in-house technical team to manage the system once built?",
+    a: "No. We build fully autonomous, self-healing systems and provide ongoing SLA monitoring, maintenance, and 24/7 technical support so your team can focus on closing deals."
   },
   {
-    q: "How can I join?",
-    a: "Simply choose a plan from our pricing section and click 'Get Started', or fill out the contact form below to speak with our admissions team."
+    q: "Can we test the AI voice agent before deploying to production?",
+    a: "Absolutely. We set up a sandbox environment where you can place live phone calls to test intent parsing, interruption handling, and CRM logging before going live."
   }
 ];
 

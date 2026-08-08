@@ -129,91 +129,6 @@ export const servicesData: Record<string, PageContent> = {
   }
 };
 
-export const trainingData: Record<string, PageContent> = {
-  "ai-foundation": {
-    title: "AI Foundation Program",
-    subtitle: "The absolute beginner's guide to artificial intelligence.",
-    description: "Master the basics of AI, prompt engineering, and everyday AI tools to become 10x more productive in your current role. No coding experience required.",
-    features: ["ChatGPT Mastery", "Prompt Engineering Basics", "Everyday AI Tools", "Productivity Hacks"],
-    pricing: "₹4,500",
-    imageUrl: "/images/training_class.png",
-    targetAudience: "Students, non-technical professionals, and anyone looking to understand the AI revolution.",
-    outcomes: ["Save 10+ hours a week", "Write better emails and reports", "Understand AI capabilities"],
-    modules: [
-      { title: "Module 1: Introduction to LLMs", desc: "Understanding how ChatGPT and Claude actually work." },
-      { title: "Module 2: Prompt Engineering Frameworks", desc: "The secret to getting exactly what you want from AI." },
-      { title: "Module 3: AI for Daily Productivity", desc: "Automating emails, summaries, and research." }
-    ],
-    faqs: [
-      { q: "Do I need to know how to code?", a: "No! This course is designed specifically for non-coders." },
-      { q: "Is the content updated?", a: "Yes, we update the curriculum monthly to include the latest model releases." }
-    ]
-  },
-  "skill-builder": {
-    title: "AI Skill Builder",
-    subtitle: "Turn AI skills into a high-paying career.",
-    description: "Our bestselling program. Learn to build automated workflows, generate content, and land high-paying freelance clients. This is the exact blueprint for starting an AI agency.",
-    features: ["Advanced Prompting", "Content Automation", "Freelance Guide", "1-on-1 Support", "Real Projects"],
-    pricing: "₹8,500",
-    imageUrl: "/images/services_tech.png",
-    modules: [
-      { title: "Module 1: Zapier & Make Mastery", desc: "Building multi-step autonomous workflows." },
-      { title: "Module 2: Custom GPTs", desc: "Training AI on specific business data." },
-      { title: "Module 3: Client Acquisition", desc: "How to package and sell your AI services." }
-    ],
-    testimonials: [
-      { name: "Karan D.", role: "Freelancer", review: "I landed my first $1,000 client within 2 weeks of finishing this course." }
-    ],
-    faqs: [
-      { q: "Do you provide job placement?", a: "While we don't guarantee jobs, we provide extensive training on how to acquire freelance clients and build a portfolio." }
-    ]
-  },
-  "income-accelerator": {
-    title: "AI Income Accelerator",
-    subtitle: "For serious entrepreneurs and agencies.",
-    description: "Learn to build complete AI automation systems for businesses. This is the exact blueprint we use to run our agency. You will learn high-ticket sales, complex bot building, and agency scaling.",
-    features: ["Complete Automation Setup", "Custom CRM Integration", "Lead Gen Workflows", "Agency Growth Blueprint", "Priority Mentorship", "Private Community Access"],
-    pricing: "₹20,000",
-    imageUrl: "/images/solutions_dashboard.png",
-    modules: [
-      { title: "Module 1: High-Ticket Sales Psychology", desc: "How to confidently close $5k+ retainers for AI services." },
-      { title: "Module 2: Advanced AI Agents", desc: "Building multi-agent systems using LangChain and advanced APIs." },
-      { title: "Module 3: Scaling Operations", desc: "How to outsource, manage teams, and build recurring revenue." }
-    ]
-  },
-  "corporate": {
-    title: "Corporate AI Training",
-    subtitle: "Upskill your entire workforce overnight.",
-    description: "Customized, private training sessions for your team to integrate AI safely and effectively into your corporate workflows. Stop your employees from leaking secure data to public models and teach them enterprise-grade prompt engineering.",
-    features: ["Private Enterprise Sessions", "Custom-Tailored Curriculum", "Security & Compliance Guidelines", "Post-Training Support", "Hands-on Workshops", "Certification of Completion"],
-    pricing: "Custom Team Pricing",
-    imageUrl: "/images/training_class.png",
-    modules: [
-      { title: "Module 1: AI Security & Ethics", desc: "Ensuring your team understands data privacy and safe AI usage policies." },
-      { title: "Module 2: Role-Specific Prompting", desc: "Custom training for marketing, HR, operations, and sales teams." },
-      { title: "Module 3: Internal Knowledge Bases", desc: "Teaching your team how to query company data securely using custom GPTs." }
-    ],
-    testimonials: [
-      { name: "Aditi S.", role: "VP of HR, TechCorp", review: "The corporate training session completely transformed how our team works. Everyone is saving at least an hour a day." }
-    ],
-    faqs: [
-      { q: "Can you train us on-site?", a: "Yes, we offer both virtual training and on-site intensive workshops across major Indian cities." }
-    ]
-  },
-  "workshops": {
-    title: "Live Implementation Workshops",
-    subtitle: "Intense, weekend implementation bootcamps.",
-    description: "Join our intensive live workshops where you don't just learn—you actually build and deploy an AI system in a single weekend alongside industry experts.",
-    features: ["Live Implementation", "Q&A Sessions", "Networking with Founders", "Ready-to-use Templates", "Lifetime Recording Access", "Bonus Cheat Sheets"],
-    pricing: "₹1,999 / Session",
-    imageUrl: "/images/mobile_app.png",
-    faqs: [
-      { q: "Are the workshops recorded?", a: "Yes, all attendees receive lifetime access to the 4K recordings of the workshop." },
-      { q: "What if I miss the live session?", a: "You can watch the recording or join the next scheduled live batch at no extra cost." }
-    ]
-  }
-};
-
 export const solutionsData: Record<string, PageContent> = {
   "business-automation": { 
     title: "Business Automation", 
@@ -294,15 +209,15 @@ export const resourcesData: Record<string, PageContent> = {
   "case-studies": { title: "Case Studies", subtitle: "Real results.", description: "See exactly how we've helped businesses increase revenue and cut costs using AI.", features: ["Revenue Breakdowns", "Architecture Overviews", "Client Interviews"] },
   "faqs": { 
     title: "Frequently Asked Questions", 
-    subtitle: "Everything you need to know.", 
-    description: "Find answers about our training programs, agency services, and pricing.", 
-    features: ["Admissions Info", "Service Timelines", "Payment Plans"],
+    subtitle: "Everything you need to know about our AI systems and deployment.", 
+    description: "Find answers about our B2B AI voice agents, CRM integration, security, and project timelines.", 
+    features: ["System Integration", "Service Timelines", "SLA & Security"],
     imageUrl: "/images/solutions_dashboard.png",
     faqs: [
-      { q: "How do I get started with a service?", a: "Click the 'Get Started' button anywhere on the site and fill out the Business Services form. Our team will contact you within 24 hours." },
-      { q: "Are the training programs pre-recorded?", a: "Most of our foundational courses are high-quality pre-recorded videos, while our workshops are conducted live via Zoom." },
-      { q: "Do you offer refunds on training?", a: "We offer a 7-day money-back guarantee on all our recorded training programs if you have completed less than 20% of the content." },
-      { q: "Where is your office located?", a: "We are headquartered in Surat, Gujarat, but we serve clients and students globally." }
+      { q: "How do I get started with an AI Automation project?", a: "Click the 'Calculate ROI' button anywhere on the site and fill out the Business Consultation form. Our strategy team will contact you within 2 business hours." },
+      { q: "What CRM systems do you integrate with?", a: "We build custom headless integrations with Salesforce, HubSpot, Zoho, LeadSquared, Pipedrive, and custom PostgreSQL/MySQL databases." },
+      { q: "How fast can you deploy a voice receptionist?", a: "Most voice receptionist and lead qualification systems are deployed within 7 to 14 business days." },
+      { q: "Where is your physical office located?", a: "We are headquartered at 4019 The Palladium Mall, near Vijaynagar, Chikuwadi, Nana Varachha, Surat, Gujarat 395010, India. We serve clients globally." }
     ]
   },
   "support": { 

@@ -5,11 +5,11 @@ import Image from "next/image";
 import TextDecode from "./TextDecode";
 
 const cards = [
-  "AI Automation",
-  "Web Development",
-  "App Development",
-  "Digital Growth",
-  "AI Training",
+  "AI Voice Agents",
+  "Real Estate AI Systems",
+  "Headless CRM Sync",
+  "Sub-800ms Latency",
+  "Custom App Dev",
   "Business Systems"
 ];
 
@@ -33,10 +33,10 @@ export default function About() {
                     WebkitTextFillColor: "transparent",
                   }}
               >
-                <TextDecode text="Where AI Meets Real Business Growth" />
+                <TextDecode text="Bringing Silicon Valley Tech to Surat & Beyond" />
               </h2>
-              <p className="text-[16px] md:text-[18px] text-white/60 leading-relaxed max-w-[500px]">
-                ParvInfoSoft is not just a training institute. We are an AI-first IT company helping businesses automate systems, scale digitally, and grow faster through technology. We train future-ready professionals while building real-world solutions.
+              <p className="text-[16px] md:text-[18px] text-white/60 leading-relaxed max-w-[520px]">
+                Headquartered at <strong className="text-white">4019 The Palladium Mall in Surat, Gujarat</strong>, ParvInfoSoft is a high-performance B2B AI Agency. We engineer autonomous AI voice receptionists, sub-800ms lead qualification engines, and headless CRM systems that automate your operations round-the-clock with zero human bottlenecks.
               </p>
             </motion.div>
           </div>

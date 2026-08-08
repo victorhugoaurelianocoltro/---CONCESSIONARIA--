@@ -20,7 +20,7 @@ export default function PrivacyPolicyPage() {
             <h2 className="text-2xl font-medium text-white mb-4">1. Introduction</h2>
             <p className="text-white/70 leading-relaxed">
               Welcome to ParvInfoSoft ("we," "our," or "us"). We are committed to protecting your personal information and your right to privacy. 
-              This Privacy Policy applies to our website (parvinfosoft.com), our AI training programs, and our IT/software development services. 
+              This Privacy Policy applies to our website (parvinfosoft.com) and our B2B AI &amp; IT automation services. 
               If you have any questions or concerns about our policy, or our practices with regards to your personal information, please contact us at parvinfosoftadmin@gmail.com.
             </p>
           </section>
@@ -31,13 +31,13 @@ export default function PrivacyPolicyPage() {
               We collect personal information that you voluntarily provide to us when you:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-white/70">
-              <li>Register for our AI training programs or courses.</li>
-              <li>Request a consultation for business services (Web Development, CRM, Automation).</li>
-              <li>Sign up for our newsletter or contact us via forms.</li>
+              <li>Request an AI Automation audit or ROI consultation.</li>
+              <li>Inquire about custom AI voice agents, CRM automation, or software engineering services.</li>
+              <li>Contact us via our website forms or live support.</li>
             </ul>
             <p className="text-white/70 leading-relaxed mt-4">
-              The personal information that we collect depends on the context of your interactions with us, but can include the following: 
-              <strong> Names, phone numbers, email addresses, city of residence, and professional details.</strong>
+              The personal information that we collect depends on the context of your interactions with us, but can include: 
+              <strong> Names, business email addresses, phone numbers, company name, and project requirements.</strong>
             </p>
           </section>
 
@@ -47,10 +47,9 @@ export default function PrivacyPolicyPage() {
               We use personal information collected via our Website for a variety of business purposes described below:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-white/70">
-              <li><strong>To facilitate course enrollment:</strong> Processing your application for AI Foundation, Skill Builder, or Income Accelerator programs.</li>
-              <li><strong>To deliver IT services:</strong> Communicating with you regarding your CRM, App, or Web development project requirements.</li>
-              <li><strong>To send administrative information:</strong> Sending product, service, and new feature information and/or information about changes to our terms, conditions, and policies.</li>
-              <li><strong>To request feedback:</strong> Contacting you about your experience with our training or services.</li>
+              <li><strong>To deliver B2B services:</strong> Communicating with you regarding your AI Voice, CRM, App, or Web development project requirements.</li>
+              <li><strong>To perform ROI audits:</strong> Analyzing your workflow bottlenecks to provide customized automation blueprints.</li>
+              <li><strong>To send administrative information:</strong> Sending project updates, SLA reports, and service policy notifications.</li>
             </ul>
           </section>
 

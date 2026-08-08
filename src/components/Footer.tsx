@@ -17,7 +17,7 @@ export default function Footer() {
               ParvInfoSoft
             </div>
             <p className="text-white/50 text-sm leading-relaxed max-w-[250px]">
-              Where AI Meets Real Business Growth. Premium AI Training Institute and IT Solutions company serving Surat, Gujarat, and all of India.
+              High-Performance B2B AI Agency & Automation Systems Provider serving Surat, Gujarat, and global enterprises.
             </p>
           </div>
 
@@ -92,7 +92,7 @@ export default function Footer() {
         {/* Bottom Strip */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-white/40 text-xs">
-            © 2026 ParvInfoSoft. All rights reserved.
+            © 2024 ParvInfoSoft. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link href="/privacy-policy" className="text-white/40 hover:text-white text-xs transition-colors">Privacy Policy</Link>

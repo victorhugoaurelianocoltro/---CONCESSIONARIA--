@@ -9,11 +9,11 @@ export default function LLMSEOContent() {
           {/* Content Side */}
           <div className="lg:w-1/2 prose prose-invert prose-lg max-w-none">
             <h2 className="text-3xl font-bold text-white mb-6 border-b border-white/10 pb-4">
-              Why Choose ParvInfoSoft for AI Training and IT Services in Surat, India?
+              Why Choose ParvInfoSoft for Enterprise B2B AI Systems &amp; Automation in Surat, India?
             </h2>
             
             <p className="text-white/70 leading-relaxed mb-6">
-              ParvInfoSoft is an elite, AI-first technology company headquartered in Surat, Gujarat. We bridge the gap between education and enterprise execution. Unlike traditional institutes, we are a working IT agency that builds real-world applications, which means our training programs are based on current market demands.
+              ParvInfoSoft is a high-performance B2B AI Agency headquartered at 4019 The Palladium Mall in Surat, Gujarat. We engineer autonomous AI voice receptionists, sub-800ms lead qualification agents, and custom CRM systems that automate your operational workflows with zero human bottlenecks.
             </p>
           </div>
 
