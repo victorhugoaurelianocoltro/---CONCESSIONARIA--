@@ -5,6 +5,11 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const basePath = "/---CONCESSIONARIA--";
+const staticRoutes = {
+  veiculos: "veiculos.html",
+  "privacy-policy": "privacidade.html",
+  "terms-of-service": "termos.html",
+};
 const temporaryRoot = await mkdtemp(path.join(projectRoot, ".github-pages-source-"));
 const outputDirectory = path.join(projectRoot, ".github-pages");
 
@@ -89,7 +94,7 @@ export default function VehiclesPage() {
     '<section className="px-5 py-16 md:px-10 md:py-20"><div className="mx-auto max-w-[1360px]"><TradeInForm /></div></section>',
     '<section id="troca" className="scroll-mt-5 px-5 py-16 md:px-10 md:py-20"><div className="mx-auto flex max-w-[1360px] flex-col justify-between gap-5 border-y border-white/10 py-8 sm:flex-row sm:items-center"><div><p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#c9f169]">Avaliação de troca</p><h2 className="mt-2 text-2xl font-semibold">Converse com a equipe MOTORA.</h2></div><a href={whatsappLink ?? "#inicio"} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center gap-2 border border-white/25 px-5 text-xs font-semibold hover:border-[#c9f169]">Consultar pelo WhatsApp <ArrowUpRight size={14} /></a></div></section>',
   );
-  home = home.replace(/<a href="\/(veiculos|privacy-policy|terms-of-service)(?=[?\"])/g, `<a href="${basePath}/$1.html`);
+  home = home.replace(/<a href="\/(veiculos|privacy-policy|terms-of-service)(?=[?\"])/g, (_, route) => `<a href="${basePath}/${staticRoutes[route]}`);
   home = home.replace('<a href="/admin" className="hover:text-white">Área do administrador</a>', "");
   home = home.replace("Os destaques serão definidos pela concessionária.", "Consulte as novidades diretamente com a equipe MOTORA.");
   home = home.replace("Quando a concessionária cadastrar e destacar um veículo no painel, ele aparecerá aqui automaticamente.", "Fale com a equipe MOTORA para consultar a seleção atual de veículos.");
@@ -115,8 +120,8 @@ export default function VehiclesPage() {
   });
   await mkdir(outputDirectory, { recursive: true });
   await cp(path.join(temporaryRoot, "out"), outputDirectory, { recursive: true });
-  for (const route of ["veiculos", "privacy-policy", "terms-of-service"]) {
-    await cp(path.join(outputDirectory, route, "index.html"), path.join(outputDirectory, `${route}.html`));
+  for (const [route, filename] of Object.entries(staticRoutes)) {
+    await cp(path.join(outputDirectory, route, "index.html"), path.join(outputDirectory, filename));
   }
   console.log(`GitHub Pages artifact created at ${outputDirectory}`);
 } finally {
