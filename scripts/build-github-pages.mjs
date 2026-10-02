@@ -8,7 +8,7 @@ const basePath = "/---CONCESSIONARIA--";
 const staticRoutes = {
   veiculos: "veiculos.html",
   "privacy-policy": "privacidade.html",
-  "terms-of-service": "termos.html",
+  "terms-of-service": "condicoes.html",
 };
 const temporaryRoot = await mkdtemp(path.join(projectRoot, ".github-pages-source-"));
 const outputDirectory = path.join(projectRoot, ".github-pages");
