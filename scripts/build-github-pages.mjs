@@ -74,6 +74,14 @@ export default function VehiclesPage() {
 }
 `);
 
+  const heroPath = path.join(temporaryRoot, "src/components/DealershipHero.tsx");
+  const hero = await readFile(heroPath, "utf8");
+  await writeFile(heroPath, hero.replaceAll('href="/veiculos"', 'href="/veiculos.html"'));
+
+  const infoPagePath = path.join(temporaryRoot, "src/components/DealershipInfoPage.tsx");
+  const infoPage = await readFile(infoPagePath, "utf8");
+  await writeFile(infoPagePath, infoPage.replace('href="/veiculos"', 'href="/veiculos.html"'));
+
   const homePath = path.join(temporaryRoot, "src/components/DealershipHome.tsx");
   let home = await readFile(homePath, "utf8");
   home = home.replace('import TradeInForm from "@/components/TradeInForm";\n', "");
@@ -81,7 +89,7 @@ export default function VehiclesPage() {
     '<section className="px-5 py-16 md:px-10 md:py-20"><div className="mx-auto max-w-[1360px]"><TradeInForm /></div></section>',
     '<section id="troca" className="scroll-mt-5 px-5 py-16 md:px-10 md:py-20"><div className="mx-auto flex max-w-[1360px] flex-col justify-between gap-5 border-y border-white/10 py-8 sm:flex-row sm:items-center"><div><p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#c9f169]">Avaliação de troca</p><h2 className="mt-2 text-2xl font-semibold">Converse com a equipe MOTORA.</h2></div><a href={whatsappLink ?? "#inicio"} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center gap-2 border border-white/25 px-5 text-xs font-semibold hover:border-[#c9f169]">Consultar pelo WhatsApp <ArrowUpRight size={14} /></a></div></section>',
   );
-  home = home.replace(/<a href="\/(veiculos|privacy-policy|terms-of-service)(?=[?\"])/g, `<a href="${basePath}/$1`);
+  home = home.replace(/<a href="\/(veiculos|privacy-policy|terms-of-service)(?=[?\"])/g, `<a href="${basePath}/$1.html`);
   home = home.replace('<a href="/admin" className="hover:text-white">Área do administrador</a>', "");
   home = home.replace("Os destaques serão definidos pela concessionária.", "Consulte as novidades diretamente com a equipe MOTORA.");
   home = home.replace("Quando a concessionária cadastrar e destacar um veículo no painel, ele aparecerá aqui automaticamente.", "Fale com a equipe MOTORA para consultar a seleção atual de veículos.");
@@ -107,6 +115,9 @@ export default function VehiclesPage() {
   });
   await mkdir(outputDirectory, { recursive: true });
   await cp(path.join(temporaryRoot, "out"), outputDirectory, { recursive: true });
+  for (const route of ["veiculos", "privacy-policy", "terms-of-service"]) {
+    await cp(path.join(outputDirectory, route, "index.html"), path.join(outputDirectory, `${route}.html`));
+  }
   console.log(`GitHub Pages artifact created at ${outputDirectory}`);
 } finally {
   await rm(temporaryRoot, { recursive: true, force: true });
