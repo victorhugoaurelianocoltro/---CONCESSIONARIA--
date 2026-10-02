@@ -1,23 +1,16 @@
-import { MetadataRoute } from 'next';
-import { servicesData, solutionsData, resourcesData } from '@/data/pages';
-import { caseStudiesData } from '@/data/case-studies';
+import type { MetadataRoute } from 'next';
+import { listVehicles } from '@/lib/dealership-db';
+
+export const dynamic = 'force-dynamic';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.parvinfosoft.com';
-  
-  // Create mapping of slug to category
-  const allPages: Record<string, string> = {
-    ...Object.keys(servicesData).reduce((acc, key) => ({ ...acc, [key]: 'services' }), {}),
-    ...Object.keys(solutionsData).reduce((acc, key) => ({ ...acc, [key]: 'solutions' }), {}),
-    ...Object.keys(resourcesData).reduce((acc, key) => ({ ...acc, [key]: 'resources' }), {}),
-    ...Object.keys(caseStudiesData).reduce((acc, key) => ({ ...acc, [key]: 'resources/case-studies' }), {}),
-  };
-
-  const dynamicRoutes = Object.keys(allPages).map((slug) => ({
-    url: `${baseUrl}/${allPages[slug]}/${slug}`,
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
+  if (!baseUrl) return [];
+  const vehicleRoutes = listVehicles().map((vehicle) => ({
+    url: `${baseUrl}/veiculos/${vehicle.slug}`,
     lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.8,
+    changeFrequency: 'daily' as const,
+    priority: vehicle.featured ? 0.9 : 0.7,
   }));
 
   return [
@@ -28,11 +21,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${baseUrl}/get-started`,
+      url: `${baseUrl}/veiculos`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'daily',
       priority: 0.9,
     },
-    ...dynamicRoutes,
+    ...vehicleRoutes,
   ];
 }

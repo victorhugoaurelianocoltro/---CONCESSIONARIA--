@@ -14,14 +14,34 @@ const nextConfig = {
       },
       {
         source: '/about.html',
-        destination: '/#about',
+        destination: '/',
         permanent: true,
       },
       {
         source: '/services.html',
-        destination: '/#services',
+        destination: '/veiculos',
         permanent: true,
-      }
+      },
+      {
+        source: '/get-started',
+        destination: '/veiculos',
+        permanent: true,
+      },
+      {
+        source: '/services/:path*',
+        destination: '/veiculos',
+        permanent: true,
+      },
+      {
+        source: '/solutions/:path*',
+        destination: '/veiculos',
+        permanent: true,
+      },
+      {
+        source: '/resources/:path*',
+        destination: '/veiculos',
+        permanent: true,
+      },
     ];
   },
 };

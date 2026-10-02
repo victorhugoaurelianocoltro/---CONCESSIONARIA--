@@ -83,7 +83,7 @@ export default function Preloader() {
                 transition={{ duration: 0.5 }}
                 className="text-white text-3xl font-medium tracking-widest mb-3 uppercase"
               >
-                <TextDecode text="ParvInfoSoft" />
+                <TextDecode text="MOTORA" />
               </motion.h1>
               
               <motion.div 
@@ -96,13 +96,11 @@ export default function Preloader() {
               </motion.div>
 
               <p className="text-accent-electric text-xs tracking-[0.3em] uppercase mt-4 animate-pulse">
-                Neural Engine Booting...
+                Preparando seu próximo caminho...
               </p>
             </div>
           </div>
           
-          {/* Noise overlay */}
-          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] mix-blend-overlay pointer-events-none"></div>
         </motion.div>
       )}
     </AnimatePresence>

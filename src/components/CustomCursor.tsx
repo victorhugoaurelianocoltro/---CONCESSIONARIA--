@@ -3,216 +3,126 @@
 import { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
 
-export default function CustomCursor() {
-  const [isMobile, setIsMobile] = useState(false);
-  const [cursorText, setCursorText] = useState("");
-  
-  const cursorDotRef = useRef<HTMLDivElement>(null);
-  const cursorRingRef = useRef<HTMLDivElement>(null);
-  const cursorTextRef = useRef<HTMLDivElement>(null);
+const touchDevice = typeof window === "undefined"
+  || window.matchMedia("(max-width: 1023px)").matches
+  || "ontouchstart" in window
+  || (typeof navigator !== "undefined" && navigator.maxTouchPoints > 0);
 
-  // Position quickTo targets
-  const dotX = useRef<((val: number) => void) | null>(null);
-  const dotY = useRef<((val: number) => void) | null>(null);
-  const ringX = useRef<((val: number) => void) | null>(null);
-  const ringY = useRef<((val: number) => void) | null>(null);
+export default function CustomCursor() {
+  const [cursorText, setCursorText] = useState("");
+  const markerRef = useRef<HTMLDivElement>(null);
+  const labelRef = useRef<HTMLDivElement>(null);
+  const cursorTextRef = useRef<HTMLSpanElement>(null);
+  const markerX = useRef<((value: number) => void) | null>(null);
+  const markerY = useRef<((value: number) => void) | null>(null);
+  const labelX = useRef<((value: number) => void) | null>(null);
+  const labelY = useRef<((value: number) => void) | null>(null);
 
   useEffect(() => {
-    // Check if device is mobile, tablet, or touch-enabled
-    if (
-      window.matchMedia("(max-width: 1023px)").matches || 
-      "ontouchstart" in window || 
-      (typeof navigator !== "undefined" && navigator.maxTouchPoints > 0)
-    ) {
-      setIsMobile(true);
-      return;
-    }
+    if (touchDevice || !markerRef.current || !labelRef.current) return;
 
-    // Set initial custom cursor setup using GSAP
-    gsap.set(cursorDotRef.current, { xPercent: -50, yPercent: -50, scale: 1 });
-    gsap.set(cursorRingRef.current, { xPercent: -50, yPercent: -50, scale: 1, backgroundColor: "transparent" });
+    const marker = markerRef.current;
+    const label = labelRef.current;
+    gsap.set(marker, { xPercent: -50, yPercent: -50, autoAlpha: 0 });
+    gsap.set(label, { xPercent: -50, yPercent: -50, width: 0, height: 30, autoAlpha: 0, scale: 0.9 });
 
-    // Initialize GSAP quickTo for sub-pixel smooth movements with custom duration/ease
-    dotX.current = gsap.quickTo(cursorDotRef.current, "x", { duration: 0.08, ease: "power3.out" });
-    dotY.current = gsap.quickTo(cursorDotRef.current, "y", { duration: 0.08, ease: "power3.out" });
-    ringX.current = gsap.quickTo(cursorRingRef.current, "x", { duration: 0.35, ease: "power4.out" });
-    ringY.current = gsap.quickTo(cursorRingRef.current, "y", { duration: 0.35, ease: "power4.out" });
+    markerX.current = gsap.quickTo(marker, "x", { duration: 0.08, ease: "power3.out" });
+    markerY.current = gsap.quickTo(marker, "y", { duration: 0.08, ease: "power3.out" });
+    labelX.current = gsap.quickTo(label, "x", { duration: 0.25, ease: "power4.out" });
+    labelY.current = gsap.quickTo(label, "y", { duration: 0.25, ease: "power4.out" });
 
-    const onMouseMove = (e: MouseEvent) => {
-      if (dotX.current && dotY.current && ringX.current && ringY.current) {
-        dotX.current(e.clientX);
-        dotY.current(e.clientY);
-        ringX.current(e.clientX);
-        ringY.current(e.clientY);
+    let hasStarted = false;
+    const onMouseMove = (event: MouseEvent) => {
+      markerX.current?.(event.clientX);
+      markerY.current?.(event.clientY);
+      labelX.current?.(event.clientX);
+      labelY.current?.(event.clientY);
+      if (!hasStarted) {
+        hasStarted = true;
+        gsap.to(marker, { autoAlpha: 1, duration: 0.15 });
       }
     };
 
-    // Global mouseenter/mouseleave hover events for links, buttons & inputs (Invert Blend Effect)
-    const onMouseEnterLink = (e: Event) => {
-      gsap.to(cursorRingRef.current, {
-        scale: 1.6,
-        backgroundColor: "rgba(255, 255, 255, 1)",
-        borderColor: "rgba(255, 255, 255, 1)",
-        duration: 0.25,
-        ease: "power2.out"
-      });
-      gsap.to(cursorDotRef.current, {
-        scale: 0,
-        duration: 0.2,
-      });
+    const onMouseEnterInteractive = () => {
+      gsap.to(marker, { scale: 1.2, duration: 0.2, ease: "power2.out" });
+      gsap.to(marker.querySelector("[data-cursor-core]"), { backgroundColor: "#f4f1e9", duration: 0.2 });
     };
 
-    const onMouseLeaveLink = (e: Event) => {
-      gsap.to(cursorRingRef.current, {
-        scale: 1,
-        backgroundColor: "transparent",
-        borderColor: "rgba(78, 163, 224, 1)", // brand accent electric
-        duration: 0.25,
-        ease: "power2.out"
-      });
-      gsap.to(cursorDotRef.current, {
-        scale: 1,
-        duration: 0.2,
-      });
+    const onMouseLeaveInteractive = () => {
+      gsap.to(marker, { scale: 1, duration: 0.22, ease: "power2.out" });
+      gsap.to(marker.querySelector("[data-cursor-core]"), { backgroundColor: "transparent", duration: 0.2 });
     };
 
-    // Dynamic Badge hover effects (e.g. data-cursor="VIEW")
-    const onMouseEnterBadge = (e: Event) => {
-      const target = e.currentTarget as HTMLElement;
-      const text = target.getAttribute("data-cursor") || "VIEW";
+    const onMouseEnterBadge = (event: Event) => {
+      const target = event.currentTarget as HTMLElement;
+      const text = target.getAttribute("data-cursor") || "VER DETALHES";
       setCursorText(text);
-
-      gsap.to(cursorRingRef.current, {
-        width: 80,
-        height: 80,
-        backgroundColor: "rgba(3, 7, 18, 0.8)", // deep brand dark
-        borderColor: "rgba(78, 163, 224, 0.4)", // transparent glow
-        borderRadius: "50%",
-        borderWidth: "1.5px",
-        backdropFilter: "blur(4px)",
-        duration: 0.3,
-        ease: "back.out(1.5)"
-      });
-
-      gsap.to(cursorDotRef.current, {
-        scale: 0,
-        duration: 0.2,
-      });
-
-      gsap.to(cursorTextRef.current, {
-        opacity: 1,
-        scale: 1,
-        duration: 0.25,
-        ease: "power2.out",
-        delay: 0.05
-      });
+      gsap.to(marker, { scale: 0.65, autoAlpha: 0.35, duration: 0.18, ease: "power2.out" });
+      gsap.to(label, { width: Math.min(190, Math.max(94, text.length * 7 + 28)), autoAlpha: 1, scale: 1, duration: 0.22, ease: "power2.out" });
+      gsap.to(label.querySelector("[data-cursor-label]"), { autoAlpha: 1, duration: 0.16, delay: 0.04 });
     };
 
-    const onMouseLeaveBadge = (e: Event) => {
+    const onMouseLeaveBadge = () => {
       setCursorText("");
-
-      gsap.to(cursorRingRef.current, {
-        width: 40,
-        height: 40,
-        backgroundColor: "transparent",
-        borderColor: "rgba(78, 163, 224, 1)",
-        borderWidth: "1.5px",
-        backdropFilter: "none",
-        duration: 0.3,
-        ease: "power2.out"
-      });
-
-      gsap.to(cursorDotRef.current, {
-        scale: 1,
-        duration: 0.2,
-      });
-
-      gsap.to(cursorTextRef.current, {
-        opacity: 0,
-        scale: 0.8,
-        duration: 0.2,
-        ease: "power2.in"
-      });
+      gsap.to(marker, { scale: 1, autoAlpha: 1, duration: 0.2, ease: "power2.out" });
+      gsap.to(label, { width: 0, autoAlpha: 0, scale: 0.9, duration: 0.18, ease: "power2.in" });
+      gsap.to(label.querySelector("[data-cursor-label]"), { autoAlpha: 0, duration: 0.1 });
     };
 
-    // Attach listeners
-    window.addEventListener("mousemove", onMouseMove);
-
-    // Track active DOM modifications (e.g., page navigation/state changes)
     const attachHoverEvents = () => {
-      // Standard interactive elements (links, buttons, custom interactive widgets)
       const interactives = document.querySelectorAll("a, button, input, textarea, select, [role='button'], .interactive-hover");
-      interactives.forEach(el => {
-        el.removeEventListener("mouseenter", onMouseEnterLink);
-        el.removeEventListener("mouseleave", onMouseLeaveLink);
-        
-        el.addEventListener("mouseenter", onMouseEnterLink);
-        el.addEventListener("mouseleave", onMouseLeaveLink);
+      interactives.forEach((element) => {
+        element.removeEventListener("mouseenter", onMouseEnterInteractive);
+        element.removeEventListener("mouseleave", onMouseLeaveInteractive);
+        element.addEventListener("mouseenter", onMouseEnterInteractive);
+        element.addEventListener("mouseleave", onMouseLeaveInteractive);
       });
 
-      // Special data-cursor elements (Portfolios, grids)
-      const badgeElements = document.querySelectorAll("[data-cursor]");
-      badgeElements.forEach(el => {
-        el.removeEventListener("mouseenter", onMouseEnterBadge);
-        el.removeEventListener("mouseleave", onMouseLeaveBadge);
-        
-        el.addEventListener("mouseenter", onMouseEnterBadge);
-        el.addEventListener("mouseleave", onMouseLeaveBadge);
+      document.querySelectorAll("[data-cursor]").forEach((element) => {
+        element.removeEventListener("mouseenter", onMouseEnterBadge);
+        element.removeEventListener("mouseleave", onMouseLeaveBadge);
+        element.addEventListener("mouseenter", onMouseEnterBadge);
+        element.addEventListener("mouseleave", onMouseLeaveBadge);
       });
     };
 
-    // Initial attachment
+    window.addEventListener("mousemove", onMouseMove);
     attachHoverEvents();
-
-    // Re-attach elements if DOM updates
     const observer = new MutationObserver(attachHoverEvents);
     observer.observe(document.body, { childList: true, subtree: true });
 
     return () => {
       window.removeEventListener("mousemove", onMouseMove);
       observer.disconnect();
-
-      const interactives = document.querySelectorAll("a, button, input, textarea, select, [role='button'], .interactive-hover");
-      interactives.forEach(el => {
-        el.removeEventListener("mouseenter", onMouseEnterLink);
-        el.removeEventListener("mouseleave", onMouseLeaveLink);
+      document.querySelectorAll("a, button, input, textarea, select, [role='button'], .interactive-hover").forEach((element) => {
+        element.removeEventListener("mouseenter", onMouseEnterInteractive);
+        element.removeEventListener("mouseleave", onMouseLeaveInteractive);
       });
-
-      const badgeElements = document.querySelectorAll("[data-cursor]");
-      badgeElements.forEach(el => {
-        el.removeEventListener("mouseenter", onMouseEnterBadge);
-        el.removeEventListener("mouseleave", onMouseLeaveBadge);
+      document.querySelectorAll("[data-cursor]").forEach((element) => {
+        element.removeEventListener("mouseenter", onMouseEnterBadge);
+        element.removeEventListener("mouseleave", onMouseLeaveBadge);
       });
+      gsap.killTweensOf([marker, label]);
     };
   }, []);
 
-  if (isMobile) return null;
+  if (touchDevice) return null;
 
   return (
     <>
-      {/* Target Dot */}
-      <div
-        ref={cursorDotRef}
-        className="fixed top-0 left-0 w-2 h-2 bg-accent-electric rounded-full pointer-events-none z-[99999] mix-blend-difference"
-      />
-      {/* Floating/Trailing Outer Ring & Text Badge */}
-      <div
-        ref={cursorRingRef}
-        className="fixed top-0 left-0 w-10 h-10 border-[1.5px] border-accent-electric rounded-full pointer-events-none z-[99998] mix-blend-difference flex items-center justify-center overflow-hidden"
-        style={{
-          boxShadow: "0 0 15px rgba(78, 163, 224, 0.15)",
-        }}
-      >
-        <span
-          ref={cursorTextRef}
-          className="text-white text-[10px] tracking-[0.2em] font-medium opacity-0 scale-90 select-none uppercase font-general"
-          style={{
-            // Keep text always crisp and fully white without invert in mix-blend-difference if inside a dark backdrop
-            color: "#ffffff"
-          }}
-        >
-          {cursorText}
-        </span>
+      <div ref={markerRef} aria-hidden="true" className="pointer-events-none fixed left-0 top-0 z-[99999] h-8 w-8 mix-blend-difference">
+        <span className="absolute left-0 top-0 h-[7px] w-[1px] bg-[#c9f169]" />
+        <span className="absolute left-0 top-0 h-[1px] w-[7px] bg-[#c9f169]" />
+        <span className="absolute right-0 top-0 h-[7px] w-[1px] bg-[#c9f169]" />
+        <span className="absolute right-0 top-0 h-[1px] w-[7px] bg-[#c9f169]" />
+        <span className="absolute bottom-0 left-0 h-[7px] w-[1px] bg-[#c9f169]" />
+        <span className="absolute bottom-0 left-0 h-[1px] w-[7px] bg-[#c9f169]" />
+        <span className="absolute bottom-0 right-0 h-[7px] w-[1px] bg-[#c9f169]" />
+        <span className="absolute bottom-0 right-0 h-[1px] w-[7px] bg-[#c9f169]" />
+        <span data-cursor-core className="absolute left-1/2 top-1/2 h-[6px] w-[6px] -translate-x-1/2 -translate-y-1/2 rotate-45 border border-[#c9f169] bg-transparent" />
+      </div>
+      <div ref={labelRef} aria-hidden="true" className="pointer-events-none fixed left-0 top-0 z-[99998] flex items-center justify-center overflow-hidden border border-[#c9f169]/80 bg-[#151610]/95 px-3 mix-blend-difference [clip-path:polygon(0_0,calc(100%_-_7px)_0,100%_7px,100%_100%,0_100%)]">
+        <span ref={cursorTextRef} data-cursor-label className="whitespace-nowrap text-[9px] font-semibold uppercase tracking-[0.12em] text-white opacity-0">{cursorText}</span>
       </div>
     </>
   );
